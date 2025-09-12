@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 30px;
+}
+
+header {
+    font-family: "Bagel Fat One", system-ui;
+    font-size: 45px;
+}
+
+ul {
+    padding: 10px;
+    list-style-type: none;
+}
+
+li {
+    padding: 3px;
+    text-transform: uppercase;
+}
+
+main {
+    background-color: aqua;
+    display: inline-flex;
+    width: auto;
+    height: 400px;
+}
+
+#ramEtt {
+    width: 250px;
+    height: auto;
+    background-color: brown;
+    box-shadow: 5px 5px #000000;
+}
+
+#ramTvå {
+    background-color: bisque;
+    width: 600px;
+    box-shadow: 5px 5px #000000;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: "Bagel Fat One", system-ui;
+}
+
+a:hover {
+    text-shadow: 2px 2px #48484873;
+}
+
