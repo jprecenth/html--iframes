@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -25,8 +27,17 @@
     </main>
 
     <footer>
-        HÄR ÄR EN FOOTER
+        <a href="">Kontakt</a>
+        <a href="#" onclick="changeContent('login.html')">Logga in</a>
+        <a href="">Användarvillkor</a>
+        <p>Klubb Pungråtta © 2025</p>
     </footer>
 </body>
 
+<script>
+    function changeContent(page) {
+        // Get the parent window and change the content iframe source
+        parent.document.querySelector('iframe:nth-child(2)').src = page;
+    }
+</script>
 </html>

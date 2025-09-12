@@ -1,12 +1,16 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+
 
 * {
     margin: 0;
     padding: 0;
 }
 
+/* GENERAL */
 body {
     margin: 30px;
+    font-family: "DynaPuff", system ui;
 }
 
 header {
@@ -14,6 +18,23 @@ header {
     font-size: 45px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-family: "Bagel Fat One", system-ui;
+}
+
+a:hover {
+    text-shadow: 2px 2px #fbb80f;
+}
+
+nav {
+    font-size: 25px;
+}
+
+h1, h2, h3, h4 {
+   font-family: "Bagel Fat One", system-ui;
+}
 ul {
     padding: 10px;
     list-style-type: none;
@@ -24,33 +45,98 @@ li {
     text-transform: uppercase;
 }
 
+/* MAIN */
 main {
-    background-color: aqua;
     display: inline-flex;
-    width: auto;
+    width: 90%;
     height: 400px;
 }
 
 #ramEtt {
-    width: 250px;
-    height: auto;
-    background-color: brown;
-    box-shadow: 5px 5px #000000;
+    width: 30%;
+    background-color: #c598af;
+    box-shadow: 5px 5px #7e4aa4a3;
+    border-top-left-radius: 30px;
 }
 
 #ramTvå {
-    background-color: bisque;
-    width: 600px;
+    background-color: #fbb80f;
+    width: 70%;
+    box-shadow: 5px 5px #7e4aa4a3;
+    border-bottom-right-radius: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    background-color: #fbb80f;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    border-top-left-radius: 30px;
+    box-shadow: 5px 5px #7e4aa4a3;
+    text-align: center;
+    font-size: 13px;
+}
+
+ footer a {
+    padding: 5px;
+ }
+
+ /* Login */
+
+#loginMain {
+    display: inline-flex;
+}
+
+#loginLeft {
+    float: left;
+    padding-right: 25px;
+}
+
+input {
+    border-radius: 5px;
+    border: 2px black solid;
+    box-sizing: border-box;
+    height: 25px;
+    text-align: center;
+    padding: 10px;
+    font-family: "DynaPuff", system ui;
+}
+
+button {
+    border-radius: 5px;
+    font-family: "DynaPuff", system ui;
+
+}
+
+button:hover {
+    box-shadow: 3px 3px #7e4aa4a3;
+    cursor: pointer;
+    text-shadow: 2px 2px #0000002d;
+}
+
+ /* Bilder */
+
+ #iframeImg {
+    width: 350px;
+    height: auto;
+    border: none;
     box-shadow: 5px 5px #000000;
+    border-style: rounded;
+    border-radius: 2px;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    font-family: "Bagel Fat One", system-ui;
+#card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start;
+    padding: 20px;
 }
-
-a:hover {
-    text-shadow: 2px 2px #48484873;
+#cardText {
+    width: 200px;
+    height: 200px;
+    text-align: start;
 }
-

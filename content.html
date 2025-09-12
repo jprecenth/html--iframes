@@ -7,11 +7,21 @@
     <title>Content</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <>
+    <h3 style="font-size: 35px;">Välkommen till Klubb Pungråtta!</h3>
+    <p>Här på Klubb Pungråtta kan du hitta på allt möjligt: <a href="#" onclick="changeContent('login.html')">logga in</a> 
+        för att chatta med vänner, lär dig mer om pungråttor, kolla in alla nya <a href="#" onclick="changeContent('pictures.html')">coola bilder</a> och mycket mer!</p>
 </body>
+
+<script>
+    function changeContent(page) {
+        // Get the parent window and change the content iframe source
+        parent.document.querySelector('iframe:nth-child(2)').src = page;
+    }
+</script>
 
 </html>

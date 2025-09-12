@@ -7,11 +7,43 @@
     <title>Content</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 
   <body>
-     login html here
-</body>
+    <h3 style="font-size: 35px;">Logga in på Klubb Pungråtta!</h3>
+    <div id="loginMain">
+      <div id="loginLeft">
+        <form id="login">
+          <label for="username">Användarnamn</label>
+          <br>
+          <input type="text" id="username" required placeholder="användarnamn" oninvalid="this.setCustomValidity('Du måste fylla i ett användarnamn!')" oninput="setCustomValidity('')">
+          <br><br>
+          <label for="username">Lösenord</label>
+          <br>
+          <input type="password" id="password" required placeholder="lösenord" oninvalid="this.setCustomValidity('Du måste fylla i ditt lösenord!')" oninput="setCustomValidity('')">
+          <br><br>
+          <button type="submit">Logga in!</button>
+        </form>
+    </div>
+    <div id="loginRight">
+      <p>Har du inget konto? Skapa ett idag!</p>
+      <p>Vi på <b>Klubb Pungråtta</b> har följande krav för att Du ska kunna bli medlem:</p>
+      <ol>
+        <li>
+          Att du är över 13 år
+        </li>
+        <li>
+          Att du (eller en målsman) har en giltig mejladress
+        </li>
+        <li>
+          Att du godkänner våra <a href="">Användarvillkor</a>
+        </li>
+      </ol>
+    </div>
+    </div>
+
+  </body>
 
 </html>
