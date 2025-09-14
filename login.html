@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
+    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
-
-  <body>
-    <h3 style="font-size: 35px;">Logga in på Klubb Pungråtta!</h3>
+<body>
+  <h1>Logga in på Klubb Pungråtta!</h1>
     <div id="loginMain">
       <div id="loginLeft">
-        <form id="login">
+        <form id="login" onsubmit="changeContent('about.html')">
           <label for="username">Användarnamn</label>
           <br>
           <input type="text" id="username" required placeholder="användarnamn" oninvalid="this.setCustomValidity('Du måste fylla i ett användarnamn!')" oninput="setCustomValidity('')">
@@ -26,24 +26,23 @@
           <br><br>
           <button type="submit">Logga in!</button>
         </form>
+      </div>
+      <div id="loginRight">
+        <p>Har du inget konto? <a href="#" onclick="changeContent('createaccount.html')">Skapa ett</a> idag!</p>
+        <p>Vi på <b>Klubb Pungråtta</b> har följande krav för att Du ska kunna bli medlem:</p>
+        <ol>
+          <li>
+            Att du är över 13 år
+          </li>
+          <li>
+            Att du (eller en målsman) har en giltig mejladress
+          </li>
+          <li>
+            Att du godkänner våra <a href="">Användarvillkor</a>
+          </li>
+        </ol>
+      </div>
     </div>
-    <div id="loginRight">
-      <p>Har du inget konto? Skapa ett idag!</p>
-      <p>Vi på <b>Klubb Pungråtta</b> har följande krav för att Du ska kunna bli medlem:</p>
-      <ol>
-        <li>
-          Att du är över 13 år
-        </li>
-        <li>
-          Att du (eller en målsman) har en giltig mejladress
-        </li>
-        <li>
-          Att du godkänner våra <a href="">Användarvillkor</a>
-        </li>
-      </ol>
-    </div>
-    </div>
-
-  </body>
+</body>
 
 </html>

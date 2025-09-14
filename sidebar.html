@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
@@ -17,26 +18,31 @@
                 <a href="#" onclick="changeContent('content.html')">Hem</a>
             </li>
             <li>
-                <a href="#" onclick="changeContent('pictures.html')">Bilder</a>
+                <a href="#" onclick="changeContent('pungrattor.html')">Pungråttor</a>
             </li>
             <li>
-                <a href="#" onclick="changeContent('login.html')">Logga in</a>
+                <a href="#" onclick="loginFirst()">Forum</a>
             </li>
             <li>
-                <a href="#" onclick="changeContent('about.html')">Om Klubben</a>
+                <a href="#" onclick="changeContent('createaccount.html')">Skapa Konto</a>
+            </li>
+            <li>
+                <a href="#" onclick="changeContent('about.html')">Om Oss</a>
+            </li>
+            <li style="text-align: center;">
+               <img src="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png" width="50px">         
+            </li>
+            <li>
+                <form id="login" onsubmit="signIn()">
+                    <input type="text" id="username" required placeholder="användarnamn" oninvalid="this.setCustomValidity('Du måste fylla i ett användarnamn!')" oninput="setCustomValidity('')">
+                    <br>
+                    <input type="password" id="password" required placeholder="lösenord" oninvalid="this.setCustomValidity('Du måste fylla i ditt lösenord!')" oninput="setCustomValidity('')">
+                    <br>
+                    <button type="submit" style="margin: 5px;">Logga in!</button>
+                </form>
             </li>
         </ul>
     </nav>
-    <div id="sidebarImg">
-        <img src="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png" width="80px">
-    </div>
 </body>
-
-<script>
-    function changeContent(page) {
-        // Get the parent window and change the content iframe source
-        parent.document.querySelector('iframe:nth-child(2)').src = page;
-    }
-</script>
 
 </html>

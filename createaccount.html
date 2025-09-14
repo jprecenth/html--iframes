@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Bli medlem i Klubb Pungråtta!</h1>
+        <form id="login" onsubmit="accountCreated()">    
+        <div id="loginMain">
+            <div id="loginLeft">
+                <label for="username">Välj ett Användarnamn</label>
+                <br>
+                <input type="text" id="username" required placeholder="användarnamn" oninvalid="this.setCustomValidity('Du måste fylla i ett användarnamn!')" oninput="setCustomValidity('')">
+                <br><br>
+                <label for="username">Välj ett Lösenord</label>
+                <br>
+                <input type="password" id="password" required placeholder="lösenord" oninvalid="this.setCustomValidity('Du måste fylla i ditt lösenord!')" oninput="setCustomValidity('')">
+                <br><br>
+                <label for="username">Mejladress</label>
+                <br>
+                <input type="email" id="password" required placeholder="mejladress" oninvalid="this.setCustomValidity('Du måste fylla i en giltig mejladress!')" oninput="setCustomValidity('')">
+            </div>
+            <div id="loginRight">
+                <p>Jag intygar att...</p>
+                <input type="checkbox" id="age" required oninvalid="this.setCustomValidity('Följande måste intygas för att skapa ett konto')" oninput="setCustomValidity('')">
+                <label>jag är över 13 år</label>
+                <br>
+                <input type="checkbox" id="email" required oninvalid="this.setCustomValidity('Följande måste intygas för att skapa ett konto')" oninput="setCustomValidity('')">
+                <label>jag har fyllt i en giltig mejladress</label>
+                <br>
+                <input type="checkbox" id="terms" required oninvalid="this.setCustomValidity('Följande måste intygas för att skapa ett konto')" oninput="setCustomValidity('')">
+                <label>jag godkänner <a href="">Användarvillkoren</a></label>
+            </div>    
+        </div>
+        <br><br>
+        <button type="submit">Bli medlem!</button>
+        </form>
+</body>
+
+</html>

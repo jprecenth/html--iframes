@@ -1,15 +1,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 
-
+/* GENERAL */
 * {
     margin: 0;
     padding: 0;
 }
 
-/* GENERAL */
 body {
-    margin: 30px;
+    margin-left: 30px;
     font-family: "DynaPuff", system ui;
 }
 
@@ -22,6 +21,7 @@ a {
     text-decoration: none;
     color: black;
     font-family: "Bagel Fat One", system-ui;
+    text-transform: uppercase;
 }
 
 a:hover {
@@ -34,7 +34,10 @@ nav {
 
 h1, h2, h3, h4 {
    font-family: "Bagel Fat One", system-ui;
+   letter-spacing: 2px;
+   text-transform: uppercase;
 }
+
 ul {
     padding: 10px;
     list-style-type: none;
@@ -49,7 +52,7 @@ li {
 main {
     display: inline-flex;
     width: 90%;
-    height: 400px;
+    height: 450px;
 }
 
 #ramEtt {
@@ -57,6 +60,7 @@ main {
     background-color: #c598af;
     box-shadow: 5px 5px #7e4aa4a3;
     border-top-left-radius: 30px;
+    min-width: 280px;
 }
 
 #ramTvå {
@@ -84,15 +88,39 @@ footer {
     padding: 5px;
  }
 
- /* Login */
+ footer a:hover {
+    text-shadow: 2px 2px #c598af;
+}
 
+/* Content */
+#newsBox {
+    background-color: #ffffff45;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 5px 5px #d99f0d;
+}
+
+#newsBox:hover {
+    background-color: #ffffff67;   
+}
+
+ /* Login */
 #loginMain {
     display: inline-flex;
+    padding-right: 10px;
 }
 
 #loginLeft {
     float: left;
-    padding-right: 25px;
+    width: auto;
+    padding-right: 20px;
+}
+
+#loginRight {
+    float: right;
 }
 
 input {
@@ -108,7 +136,6 @@ input {
 button {
     border-radius: 5px;
     font-family: "DynaPuff", system ui;
-
 }
 
 button:hover {
@@ -117,26 +144,69 @@ button:hover {
     text-shadow: 2px 2px #0000002d;
 }
 
- /* Bilder */
-
- #iframeImg {
-    width: 350px;
-    height: auto;
-    border: none;
-    box-shadow: 5px 5px #000000;
-    border-style: rounded;
-    border-radius: 2px;
-}
-
+ /* Pungråttor */
 #card {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    justify-content: start;
-    padding: 20px;
+    justify-content:flex-start;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #c598af;
+    min-width: 300px;
+    flex-wrap: wrap;
 }
+
+#card:hover {
+    background-color: #ffffff67; 
+}
+
+ #iframeImg {
+    width: 250px;
+    height: auto;
+    box-shadow: 5px 5px #7e4aa4a3;
+    border-radius: 20px;    
+}
+
 #cardText {
-    width: 200px;
-    height: 200px;
     text-align: start;
+}
+
+/* Profile */
+#profileMain {
+    display: inline-flex;
+    width: 100%;
+}
+
+#profileLeft {
+    float: left;
+    width: 70%;
+    padding-left: 20px;
+    background-color: #c598af;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px #7e4aa4a3;
+    display: inline-flex;
+}
+
+#profileStats {
+    padding-right: 20px;
+}
+
+#profileRight {
+    float: inline-end;
+    background-color: #c598af;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px #7e4aa4a3;
+    width: 25%;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 170px;
+}
+
+#avatar {
+    border-radius: 20px;
+    width: 100px;
+    border: 8px solid #7e4aa4a3;
 }
