@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
@@ -37,7 +38,7 @@
                 <label>jag har fyllt i en giltig mejladress</label>
                 <br>
                 <input type="checkbox" id="terms" required oninvalid="this.setCustomValidity('Följande måste intygas för att skapa ett konto')" oninput="setCustomValidity('')">
-                <label>jag godkänner <a href="">Användarvillkoren</a></label>
+                <label>jag godkänner <a href="#" onclick="changeContent('terms.html')">Användarvillkoren</a></label>
             </div>    
         </div>
         <br><br>

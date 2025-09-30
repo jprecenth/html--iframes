@@ -1,15 +1,14 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-
 /* GENERAL */
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
     margin-left: 30px;
     margin-right: 15px;
+    margin-bottom: 10px;
     font-family: "DynaPuff", system ui;
     max-width: 1300px;
 }
@@ -31,6 +30,7 @@ a:hover {
 }
 
 nav {
+    padding-top: 20px;
     font-size: 25px;
 }
 
@@ -38,11 +38,12 @@ h1, h2, h3, h4 {
    font-family: "Bagel Fat One", system-ui;
    letter-spacing: 2px;
    text-transform: uppercase;
+   margin: 5px 0 5px 0;
 }
 
 h1 {
-    margin-bottom: 30px;
-    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 ul {
@@ -53,6 +54,49 @@ ul {
 li {
     padding: 3px;
     text-transform: uppercase;
+}
+
+/* THEME */
+body.light-theme {
+    background-image: url(/html--iframes/Opossum.png);
+    background-size: auto 350px; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: bottom right;
+}
+body.dark-theme {
+    background-color: #545454;
+    background-image: url(/html--iframes/racoon.png);
+    background-size: auto 200px; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: bottom right;
+    .racoon {
+        visibility: visible;
+    }
+}
+body.light-theme h1 {
+    color: #000;
+}
+
+body.dark-theme h1{
+    color: #fbb80f;
+}
+body.dark-theme #theme-toggle:hover {
+    text-shadow: 1px 0px #000000;
+}
+.racoon {
+  font-family: "Sedgwick Ave Display";
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 60px;
+  color: red;
+  position: absolute;
+  left: 450px;
+  top: 50px;
+  transform: rotate(-15deg);
+  visibility: hidden;
+  text-shadow: #000000c2 4px 4px 5px;
 }
 
 /* MAIN */
@@ -85,7 +129,7 @@ footer {
     background-color: #fbb80f;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 20px;
+    padding-top: 5px;
     border-top-left-radius: 30px;
     box-shadow: 5px 5px #7e4aa4a3;
     text-align: center;
@@ -129,6 +173,7 @@ footer a:hover {
 
 #loginRight {
     float: right;
+    margin-left: 20px;
 }
 
 input {
@@ -140,9 +185,21 @@ input {
     padding: 10px;
     font-family: "DynaPuff", system ui;
 }
+body.dark-theme input {
+    background-color: #2b2b2b;   /* mörkgrå bakgrund */
+    color: #fbb80f;              /* textfärg */
+    border-color: #fbb80f;       /* valfritt: matchar temat */
+}
+
+body.dark-theme input::placeholder {
+    color: #fbb80f;              /* om du vill att placeholdern följer med */
+    opacity: 0.7;                /* justera efter smak */
+}
+
 
 button {
     border-radius: 5px;
+    padding: 3px;
     font-family: "DynaPuff", system ui;
 }
 
@@ -156,12 +213,12 @@ button:hover {
 #card {
     display: flex;
     gap: 20px;
-    justify-content:flex-start;
-    padding: 15px;
-    margin: 10px;
+    justify-content: flex-start;
+    padding: 15px 0 15px 15px;
+    margin: 10px 0 10px 0;
     border-radius: 20px;
     background-color: #c598af;
-    min-width: 560px;
+    min-width: 500px;
     flex-wrap: wrap;
 }
 
@@ -170,7 +227,7 @@ button:hover {
 }
 
  #iframeImg {
-    width: 250px;
+    width: 200px;
     height: auto;
     box-shadow: 5px 5px #7e4aa4a3;
     border-radius: 20px;    
@@ -178,6 +235,24 @@ button:hover {
 
 #cardText {
     text-align: start;
+    word-wrap: break-word;
+}
+
+.upp {
+    background-color: #fbb80f7b;
+    position: sticky;
+    bottom: 3%;
+    left: 98%;
+    padding: 2px 3px 0px 3px;
+    border-radius: 5px;
+    &:hover {
+        cursor: pointer;
+        background-color: #fbb80f;
+    }
+    svg {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 /* Profile */
@@ -218,3 +293,35 @@ button:hover {
     width: 100px;
     border: 8px solid #7e4aa4a3;
 }
+#theme-toggle {
+    color: #000;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+body.dark-theme #theme-toggle {
+    color: #000;
+    background-color: #fbb80f;
+    border-color: #000000;
+}
+
+.icon {
+    animation-name: none;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+}
+
+@keyframes iconAnimation {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1440deg);
+    }
+}
+
+
+

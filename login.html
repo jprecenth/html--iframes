@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -38,7 +39,7 @@
             Att du (eller en målsman) har en giltig mejladress
           </li>
           <li>
-            Att du godkänner våra <a href="">Användarvillkor</a>
+            Att du godkänner våra <a href="#" onclick="changeContent('terms.html')">Användarvillkoren</a>
           </li>
         </ol>
       </div>

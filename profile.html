@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
@@ -17,7 +18,7 @@
     </script>
 </head>
 
-  <body>
+<body>
     <h1>Välkommen, <span class="usernamePlaceholder"></span>!</h1>
     <div id="profileMain">
         <div id="profileLeft">
