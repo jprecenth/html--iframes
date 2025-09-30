@@ -16,6 +16,8 @@ body {
 header {
     font-family: "Bagel Fat One", system-ui;
     font-size: 45px;
+    position: relative;
+    min-width: 900px;
 }
 
 a {
@@ -35,10 +37,10 @@ nav {
 }
 
 h1, h2, h3, h4 {
-   font-family: "Bagel Fat One", system-ui;
-   letter-spacing: 2px;
-   text-transform: uppercase;
-   margin: 5px 0 5px 0;
+    font-family: "Bagel Fat One", system-ui;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 5px 0 5px 0;
 }
 
 h1 {
@@ -47,7 +49,6 @@ h1 {
 }
 
 ul {
-    padding: 10px;
     list-style-type: none;
 }
 
@@ -56,6 +57,22 @@ li {
     text-transform: uppercase;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #926b0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #353535;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+   background: #000;
+   
+}
+
+
 /* THEME */
 body.light-theme {
     background-image: url(/html--iframes/Opossum.png);
@@ -63,40 +80,85 @@ body.light-theme {
     background-repeat: no-repeat; 
     background-attachment: fixed; 
     background-position: bottom right;
+    h1 {
+        color: #000;
+    }
 }
+
 body.dark-theme {
-    background-color: #545454;
+    background-color: #2d2d2d;
     background-image: url(/html--iframes/racoon.png);
     background-size: auto 200px; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
     background-position: bottom right;
-    .racoon {
+    #ramEtt {
+        background-color: #c03b3b;
+        box-shadow: 5px 5px #861c1c;
+    }
+    #ramTvå {
+        box-shadow: 5px 5px #861c1c;
+    }
+    .racoon, .disco, .danceOne, .danceTwo {
         visibility: visible;
     }
+    footer {
+        box-shadow: 5px 5px #861c1c;
+    }
+    h1{
+        color: #fbb80f;
+        text-shadow: 5px 5px black;
+    }
+    button:hover {
+        box-shadow: red 2px 2px 7px;
+    }
+    #toggleOn {
+        display: unset;
+    }
+    #toggleOff {
+        display: none;
+    }
 }
-body.light-theme h1 {
-    color: #000;
+#toggleOn {
+    display: none;
+    position: static;
 }
 
-body.dark-theme h1{
-    color: #fbb80f;
-}
-body.dark-theme #theme-toggle:hover {
-    text-shadow: 1px 0px #000000;
+.disco {
+    position: fixed;
+    top: 0;
+    left: 25%;
+    width: 60px;
+    visibility: hidden;
+    z-index: -1
 }
 .racoon {
-  font-family: "Sedgwick Ave Display";
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 60px;
-  color: red;
-  position: absolute;
-  left: 450px;
-  top: 50px;
-  transform: rotate(-15deg);
-  visibility: hidden;
-  text-shadow: #000000c2 4px 4px 5px;
+    font-family: "Sedgwick Ave Display";
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 60px;
+    color: red;
+    position: absolute;
+    left: 35%;
+    top: 17%;
+    transform: rotate(-15deg);
+    visibility: hidden;
+    text-shadow: #000000c2 4px 4px 5px;
+}
+.danceOne {
+    width: 150px;
+    position: fixed;
+    left: 40%;
+    bottom: 0;
+    visibility: hidden;
+}
+.danceTwo {
+    width: 150px;
+    position: fixed;
+    left: 60%;
+    bottom: 0;
+    transform: rotateY(180deg);
+    visibility: hidden;
 }
 
 /* MAIN */
@@ -107,11 +169,11 @@ main {
 }
 
 #ramEtt {
-    width: 280px;
+    max-width: 250px;
     background-color: #c598af;
     box-shadow: 5px 5px #7e4aa4a3;
     border-top-left-radius: 30px;
-    padding-right: 20px;
+    padding-right: 40px;
 }
 
 #ramTvå {
@@ -138,7 +200,7 @@ footer {
 
 footer a {
     padding: 5px;
- }
+}
 
 footer a:hover {
     text-shadow: 2px 2px #c598af;
@@ -159,7 +221,7 @@ footer a:hover {
     background-color: #ffffff67;   
 }
 
- /* Login */
+/* Login */
 #loginMain {
     display: flex;
     padding-right: 10px;
@@ -196,7 +258,6 @@ body.dark-theme input::placeholder {
     opacity: 0.7;                /* justera efter smak */
 }
 
-
 button {
     border-radius: 5px;
     padding: 3px;
@@ -209,7 +270,7 @@ button:hover {
     text-shadow: 2px 2px #0000002d;
 }
 
- /* Pungråttor */
+/* Pungråttor */
 #card {
     display: flex;
     gap: 20px;
@@ -226,7 +287,7 @@ button:hover {
     background-color: #ffffff67; 
 }
 
- #iframeImg {
+#iframeImg {
     width: 200px;
     height: auto;
     box-shadow: 5px 5px #7e4aa4a3;
@@ -239,16 +300,13 @@ button:hover {
 }
 
 .upp {
-    background-color: #fbb80f7b;
+    background-color: #fbb80f;
     position: sticky;
     bottom: 3%;
     left: 98%;
     padding: 2px 3px 0px 3px;
+    box-shadow: 3px 3px #aa6fd4a3;
     border-radius: 5px;
-    &:hover {
-        cursor: pointer;
-        background-color: #fbb80f;
-    }
     svg {
         width: 15px;
         height: 15px;
@@ -297,9 +355,14 @@ button:hover {
     color: #000;
     background-color: #f0f0f0;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    svg {
+        margin-left: 2px;
+    }
 }
 body.dark-theme #theme-toggle {
     color: #000;
