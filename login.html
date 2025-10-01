@@ -27,6 +27,10 @@
           <br><br>
           <button type="submit">Logga in!</button>
         </form>
+          <div id="logoutSection" style="display:none;">
+          <p>Du är inloggad som <span id="loggedInUserName"></span></p>
+          <button onclick="logOut()">Logga ut</button>
+        </div>
       </div>
       <div id="loginRight">
         <p>Har du inget konto? <a href="#" onclick="changeContent('createaccount.html')">Skapa ett</a> idag!</p>
@@ -39,7 +43,7 @@
             Att du (eller en målsman) har en giltig mejladress
           </li>
           <li>
-            Att du godkänner våra <a href="#" onclick="changeContent('terms.html')">Användarvillkoren</a>
+            Att du godkänner våra <a href="#" onclick="changeContent('terms.html')">Användarvillkor</a>
           </li>
         </ol>
       </div>
