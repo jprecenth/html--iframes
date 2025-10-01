@@ -236,7 +236,6 @@ footer {
 }
 
 /* Login */
-
 #loginMain {
     display: flex;
     padding-right: 10px;
@@ -246,6 +245,7 @@ footer {
     float: left;
     width: auto;
     padding-right: 20px;
+
 }
 
 #loginRight {
@@ -332,38 +332,64 @@ button:hover {
 }
 
 /* Profile */
-#profileMain {
+.profile-container {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-#profileLeft {
+.profile-top {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .profile-links {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-top: 25px;
+        padding-left: 5px;
+        a {
+            padding: 5px;
+        }
+        svg {
+            fill: #c598af;
+            transition-duration: .2s;
+            &:hover {
+                fill: #ffffff;
+                scale: 1.1;
+            }
+        #loggaUt {
+            background-color: #c598af;
+        }
+        }
+    }
+}
+
+.profile-middle-one {
     float: left;
-    padding-left: 20px;
     background-color: #c598af;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: 5px 5px #7e4aa4a3;
     display: inline-flex;
-    padding: 10px;
-    #profileStats {
-    }
+    padding: 10px 10px 20px 20px;
 }
 
-
-
-#profileRight {
-    float: inline-end;
+.profile-middle-two {
+    float: inline-start;
     background-color: #c598af;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: 5px 5px #7e4aa4a3;
-    margin-left: 10px;
-    margin-right: 10px;
-    min-width: 150px;
-    max-width: 150px;
-    padding: 10px;
+    margin-left: 20px;
+    padding: 10px 10px 20px 20px;
+    p {
+        text-indent: 20px;
+        line-height: 25px;
+    }
+    div {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
 }
 
 #avatar {
@@ -418,15 +444,17 @@ body.dark-theme #theme-toggle {
     }
 }
 
-.about-container {
-    display: flex;
-    justify-content: flex-end;
-}
 .staff {
     width: 200px;
     height: 250px;
     border-radius: 20px;
     box-shadow: 5px 5px #7e4aa4a3;
-    margin-left: 10px;
+    float: right;
+    padding-left: 10px;
 }
 
+/* Media */
+
+@media  {
+    
+}
