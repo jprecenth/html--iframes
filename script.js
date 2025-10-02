@@ -34,7 +34,7 @@ function accountCreated() {
 // Logga in
 function signIn() {
   const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value; 
+  const password = document.getElementById('password').value;
 
   localStorage.setItem("loggedInUser", username);
   window.parent.loggedInName = username;
@@ -56,7 +56,7 @@ function logOut() {
 function onProfileLoad() {
   var username = window.parent.loggedInName;
   document.querySelectorAll(".usernamePlaceholder").forEach((element) => {
-    element.textContent = username;
+    element.textContent = username;  
   })
 }
 
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login");
   const logoutSection = document.getElementById("logoutSection");
   const loggedInNameSpan = document.getElementById("loggedInUserName");
+  const loginRight = document.getElementById("loginRight");
 
   if (loginForm) {
     const loggedInUser = localStorage.getItem("loggedInUser");
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Visa logout-sektionen med användarnamnet
       if (logoutSection) {
         logoutSection.style.display = "block";
+        loginRight.style.display = "none";
         if (loggedInNameSpan) loggedInNameSpan.textContent = loggedInUser;
       }
     } else {

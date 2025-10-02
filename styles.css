@@ -11,8 +11,8 @@ body {
     margin-bottom: 10px;
     font-family: "DynaPuff", system ui;
     max-width: 1300px;
-        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.597);
-
+    /* text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.597); */
+    
 }
 
 header {
@@ -20,6 +20,7 @@ header {
     font-size: 45px;
     position: relative;
     min-width: 900px;
+    text-shadow: 5px 5px #fbb80f;
 }
 
 a {
@@ -27,10 +28,11 @@ a {
     color: black;
     font-family: "Bagel Fat One", system-ui;
     text-transform: uppercase;
+    transition-duration: .4s;
 }
 
-a:hover {
-    text-shadow: 2px 2px #fbb80f;
+a:hover:not(header a) {
+    text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;
 }
 
 nav {
@@ -38,15 +40,16 @@ nav {
     font-size: 25px;
     li:last-child {
         text-align: center;
-        background-color: #3f3f3f42;
-        box-shadow: 3px 3px 6px;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 17px;
-        &:hover {
-            cursor: pointer;
-            background-color: #d6d6d642;
-            text-shadow: 2px 2px 2px #fbb80f;
+        button {
+            padding: 10px;
+            font-size: 17px;
+            transition-duration: .5s;
+            box-shadow: 2px 2px 2px black;
+            background-color: #fbb80f;
+            &:hover {
+                background-color: #ffc42e;
+                box-shadow: 3px 3px 4px black;
+            }
         }
     }
 }
@@ -90,11 +93,12 @@ li {
 
 /* THEME */
 body.light-theme {
-    background-image: url(/html--iframes/Opossum.png);
+    background-image: url(Opossum.png);
     background-size: auto 350px; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
     background-position: bottom right;
+    transition-duration: 1s;
     h1 {
         color: #000;
     }
@@ -102,11 +106,12 @@ body.light-theme {
 
 body.dark-theme {
     background-color: #2d2d2d;
-    background-image: url(/html--iframes/racoon.png);
+    background-image: url(racoon.png);
     background-size: auto 200px; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
     background-position: bottom right;
+    transition-duration: 1s;
     #ramEtt {
         background-color: #c03b3b;
         box-shadow: 5px 5px #861c1c;
@@ -123,9 +128,6 @@ body.dark-theme {
     h1{
         color: #fbb80f;
         text-shadow: 5px 5px black;
-    }
-    button:hover {
-        box-shadow: red 2px 2px 7px;
     }
     #toggleOn {
         display: unset;
@@ -214,9 +216,6 @@ footer {
     a {
         padding: 5px;
     }
-    a:hover {
-        text-shadow: 1px 1px #ffffff;
-    }
 }
 
 
@@ -229,6 +228,7 @@ footer {
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: 5px 5px #d99f0d;
+    transition-duration: .4s;
 }
 
 #newsBox:hover {
@@ -245,7 +245,7 @@ footer {
     float: left;
     width: auto;
     padding-right: 20px;
-
+    
 }
 
 #loginRight {
@@ -277,12 +277,12 @@ button {
     border-radius: 5px;
     padding: 3px;
     font-family: "DynaPuff", system ui;
+    transition-duration: .3s;
 }
 
 button:hover {
     box-shadow: 3px 3px #7e4aa4a3;
     cursor: pointer;
-    text-shadow: 2px 2px #0000002d;
 }
 
 /* Pungråttor */
@@ -296,6 +296,7 @@ button:hover {
     background-color: #c598af;
     min-width: 500px;
     flex-wrap: wrap;
+    transition-duration: .4s;
 }
 
 #card:hover {
@@ -332,6 +333,30 @@ button:hover {
 }
 
 /* Profile */
+.profile-div-style {
+    background-color: #c598af;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px #7e4aa4a3;
+    padding: 10px 10px 20px 20px;
+    margin-bottom: 15px;
+}
+
+.profile-gallery {
+    img {
+        width: 150px;
+        height: 150px;
+        object-fit: fill;
+        border-radius: 20px;
+        margin: 5px;
+        box-shadow: 5px 5px #7e4aa4a3;
+        transition-duration: .3s;
+        &:hover {
+            box-shadow: 5px 5px #fbb80f;
+        }
+    }
+}
+
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -357,45 +382,46 @@ button:hover {
                 fill: #ffffff;
                 scale: 1.1;
             }
-        #loggaUt {
-            background-color: #c598af;
+            #loggaUt {
+                background-color: #c598af;
+            }
         }
+    }
+}
+
+.profile-middle {
+    display: flex;
+    .profile-middle-one {
+        float: inline-start;
+        width: 100%;
+        p {
+            text-indent: 20px;
+            line-height: 25px;
+        }
+        div {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        li {
+            margin: 10px;
+            list-style-type: none;
+
         }
     }
-}
-
-.profile-middle-one {
-    float: left;
-    background-color: #c598af;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 5px 5px #7e4aa4a3;
-    display: inline-flex;
-    padding: 10px 10px 20px 20px;
-}
-
-.profile-middle-two {
-    float: inline-start;
-    background-color: #c598af;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 5px 5px #7e4aa4a3;
-    margin-left: 20px;
-    padding: 10px 10px 20px 20px;
-    p {
-        text-indent: 20px;
-        line-height: 25px;
+    .profile-middle-two {
+        float: right;
+        display: inline-flex;
+        margin-left: 15px;
+        text-wrap: nowrap;
     }
-    div {
-        margin-bottom: 5px;
-        margin-top: 5px;
-    }
-}
-
+}    
 #avatar {
     border-radius: 20px;
     width: 100px;
-    border: 8px solid #7e4aa4a3;
+    box-shadow: 5px 5px #7e4aa4a3;
+    padding: 3px;
+    margin: 5px;
+    background-color: white;
 }
 #theme-toggle {
     color: #000;
@@ -406,14 +432,26 @@ button:hover {
     z-index: 1000;
     display: flex;
     align-items: center;
+    box-shadow: 2px 2px 2px black;
+    transition-duration: .3s;
     svg {
         margin-left: 2px;
+    }
+    &:hover {
+        text-shadow: none;
+        background-color: #e0e0e0;
+        box-shadow: 3px 3px 4px black;
     }
 }
 body.dark-theme #theme-toggle {
     color: #000;
     background-color: #fbb80f;
     border-color: #000000;
+    transition-duration: .3s;
+    &:hover {
+        text-shadow: none;
+        background-color: rgb(228, 180, 60);
+    }
 }
 
 .icon {
