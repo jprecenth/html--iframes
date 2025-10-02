@@ -8,6 +8,11 @@ if (toggle) {
   });
 }
 
+// MOBILE
+
+
+
+
 // Byta innehåll i iframe
 function changeContent(page) {
   parent.document.querySelector('iframe:nth-child(2)').src = page;
@@ -17,7 +22,7 @@ function changeContent(page) {
 function loginFirst() {
 
     if (!window.parent.loggedInName){
-        alert("Du måste logga in för att komma åt forumet!");
+        alert("Du måste logga in för att komma åt denna sida!");
     }
     else {
         changeContent('forum.html');
@@ -41,15 +46,33 @@ function signIn() {
 
   console.log("Inloggad som: " + username);
 
-  changeContent('profile.html');
-  accountName();
+  // Visa profil-länken i sidebar
+  const sidebarDoc = window.parent.document.getElementById("ramEtt").contentDocument;
+  const profileLink = sidebarDoc.getElementById("profileLink");
+  const loginSignupDiv = sidebarDoc.querySelector(".loginSignup-div");
+
+  if (profileLink) profileLink.style.display = "inline";
+  if (loginSignupDiv) loginSignupDiv.style.display = "none";
+
+  // Ladda profilen i ramTvå
+  window.parent.document.getElementById("ramTvå").src = "profile.html";
 }
 
 // Logga ut
 function logOut() {
   localStorage.removeItem('loggedInUser');
   window.parent.loggedInName = null;
-  changeContent("login.html");
+  console.log("Utloggad");
+
+  const sidebarDoc = window.parent.document.getElementById("ramEtt").contentDocument;
+  const profileLink = sidebarDoc.getElementById("profileLink");
+  const loginSignupDiv = sidebarDoc.querySelector(".loginSignup-div");
+
+  if (profileLink) profileLink.style.display = "none";
+  if (loginSignupDiv) loginSignupDiv.style.display = "block";
+
+  // Gå till login
+  window.parent.document.getElementById("ramTvå").src = "login.html";
 }
 
 // När profil laddas
@@ -57,6 +80,8 @@ function onProfileLoad() {
   var username = window.parent.loggedInName;
   document.querySelectorAll(".usernamePlaceholder").forEach((element) => {
     element.textContent = username;  
+
+    console.log("Profil laddad för: " + username);
   })
 }
 
@@ -114,3 +139,11 @@ function scrollFunction() {
 }
 
 window.onscroll = scrollFunction;
+
+  // Show more - Äldre Nyheter
+    function showMore() {
+      let moreNewsContainer = document.getElementById("more-news");
+      let moreNewsLink = document.getElementById("more-news-link");
+      moreNewsContainer.style.display = "inline";
+      moreNewsLink.style.display = "none"
+    }
