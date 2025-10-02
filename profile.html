@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
@@ -17,40 +18,62 @@
     </script>
 </head>
 
-  <body>
-    <h1>Välkommen, <span class="usernamePlaceholder"></span>!</h1>
-    <div id="profileMain">
-        <div id="profileLeft">
-            <div id="profileStats">
-                <h2>Min Profil</h2>
-                <a href=""><img src="ProfilePic.jpg" id="avatar" alt="Standard profilbild: en enkel emoji av en pungråttas huvud."></a>
-                <p><b>Användarnamn:</b>
-                <br><span class="usernamePlaceholder"></span></p>
-           
-                <p><b>Medlem sedan:</b>
-                <br>11-09-25</p>
-            </div>
-            <div id="profileActivity">
-               <h3>Min aktivitet</h3>
-               <b>Senaste foruminlägg:</b>
-               <li><a href="" style="text-decoration: underline;">De stal mammas peng...</a></li>
-               <li><a href="" style="text-decoration: underline;">Min mammas kreditko...</a></li>
-               <li><a href="" style="text-decoration: underline;">Kan pungråttor flyg...</a></li>
-               <p><b>Senaste inloggning:</b>
-                    <br>12-09-25 13:22</p>
-                </li>
-               </ul>
+<body>
+    <div class="profile-container">
+        <div class="profile-top">
+            <h1>Välkommen, <span class="usernamePlaceholder"></span>!</h1>
+            <div class="profile-links">
+                <a href="" title="Meddelanden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-heart-icon lucide-message-circle-heart"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z"/></svg>
+                </a>
+                <a href="" title="Vänlista">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-heart-icon lucide-book-heart"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z"/></svg>
+                </a>
+                <a href="" title="Inställningar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+                </a>
+                <a href='content.html' onclick="logOut()" title="Logga ut" id="loggaUt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-right-icon lucide-square-arrow-right"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
+                </a>
             </div>
         </div>
-        <div id="profileRight" style="text-align: end;">
-            <ul>
-                <li><a href="">Meddelanden <b>✉</b></a></li>
-                <li><a href="">Vänlista <b>❤</b></a></li>
-                <li><a href="">Inställningar <b>⚙</b></a></li>
-                <li><a href="#" onclick="changeContent('content.html')">Logga ut ➡</a></li>
-            </ul>
+        <div class="profile-middle">
+            <div class="profile-middle-one profile-div-style">
+                <div>
+                    <h2>Min aktivitet</h2>
+                    <b>Senaste foruminlägg:</b>
+                    <li><a href="" style="text-decoration: underline;">De stal mammas peng...</a></li>
+                    <li><a href="" style="text-decoration: underline;">Min mammas kreditko...</a></li>
+                    <li><a href="" style="text-decoration: underline;">Kan pungråttor flyg...</a></li>
+                </div>
+                <div>
+                    <b>Senaste inloggning:</b>
+                    <br>12-09-25 13:22</p>
+                </div>
+            </div>
+             <div class="profile-middle-two profile-div-style">
+                <div id="profileStats">
+                    <h2>Min Profil</h2>
+                    <img src="ProfilePic.jpg" id="avatar" alt="Standard profilbild: en enkel emoji av en pungråttas huvud.">
+                    <p><b>Användarnamn:</b></p>
+                    <p><span class="usernamePlaceholder"></span></p>
+                    <br>
+                    <p><b>Medlem sedan:</b></p>
+                    <p>11-09-25</p>
+                </div>
+            </div>
+        </div>
+        <div class="profile-bottom profile-div-style">
+            <h2>Mina Pungråttor</h2>
+            <div class="profile-gallery">
+                <a href=""><img src="https://media.istockphoto.com/id/996289092/photo/the-virginia-opossum-didelphis-virginiana-on-white.jpg?s=612x612&w=0&k=20&c=phkJqsrIfKvMlPoQfDni6LuDfXN5ugYLbs6frKG_7Gs=" alt="Pungråttan Toby: en pungråtta sedd framifrån med munnen öppen på ett hotfullt sätt."></a>
+                <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTpzqIu4KyKJe52u9u1m2YVnbkt6wX0kzyGivx1FHzHNlGAAx7FKhIFVUifuikTvV1s9g&usqp=CAU" alt="Pungråttan Bella: en liten pungråtte-unge som sitter på en filt utomhus, hon ler försiktigt mot kameran."></a>
+            </div>
         </div>
     </div>
+    <button class="upp" onclick="scrollUp()" id="upp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-to-line-icon lucide-arrow-up-to-line"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>
+    </button>
   </body>
   
 </html>

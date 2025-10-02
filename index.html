@@ -2,33 +2,41 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Klubb Pungråtta</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-</head>
-
-<body style="background-image: url(/Opossum.png); background-size: auto 350px; background-repeat: no-repeat; background-attachment: fixed; background-position: bottom right;">
-    <header>
-        <a href="index.html"><h1>Klubb Pungråtta</h1></a>
-    </header>
-    <main>
-
-            <iframe src="sidebar.html" frameborder="0" id="ramEtt"></iframe>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Klubb Pungråtta</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    </head>
+    
+    <body class="light-theme">
+        <button id="theme-toggle" type="button" title="Byt färgschema">
+            Tema
+            <svg id="toggleOff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-toggle-right-icon lucide-toggle-right"><circle cx="15" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg><svg id="toggleOn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-toggle-left-icon lucide-toggle-left"><circle cx="9" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg>
+        </button>
+        <header>
+            <a href="index.html"><h1>Klubb Pungråtta</h1></a>
+            <img src="/disco.gif" class="disco">
+            <p class="racoon">Tvättbjörn</p>
+        </header>
+        <main>
+            <iframe src="sidebar.html" frameborder="0" id="ramEtt" class=sidebar-frame></iframe>
+            
             <iframe src="content.html" frameborder="0" id="ramTvå"></iframe>
-
-    </main>
-    <footer>
-        <a href="#" onclick="changeContent('about.html')">Kontakt</a>
-        <a href="#" onclick="changeContent('login.html')">Logga in</a>
-        <a href="">Användarvillkor</a>
-        <p>Klubb Pungråtta © 2025</p>
-    </footer>
-</body>
-
-</html>
+        </main>
+        <footer>
+            <a href="#" onclick="changeContent('about.html')">Om oss</a>
+            <a href="#" onclick="changeContent('about.html')">Kontakt</a>
+            <a href="#" onclick="changeContent('terms.html')">Användarvillkor</a>
+            <p>Klubb Pungråtta © 2025</p>
+        </footer>
+        <img src="dance.gif" class="danceOne">
+        <img src="dance.gif" class="danceTwo">
+    </body>
+    
+    </html>

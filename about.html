@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Klubb Pungråtta</title>
@@ -12,27 +13,34 @@
 </head>
 
 <body>
+    <div>
     <h1>Klubb Pungråtta</h1>
-    <p>Här på Klubb Pungråtta finns allt du kan föreställa dig! Pungråttorna är såklart vårt fokus här på klubben; 
-        vi har alltid minst 6 pungråttor med olika intressen tillgängliga att välja mellan. Läs mer om dem <a href="#" onclick="changeContent('pungrattor.html')">här</a>. 
-    </p>
-    <p>Klubben startades 2019 av några engagerade pungråttefans som ville skapa en färgglad och rolig plats för barn på nätet.
-        Nu har vi över 15 000 medlemmar, ett aktivt forum, ett brädspel, en prenumerationstjänst och världens roligaste jobb!
-    </p>
+    <img src="/staff.jpg" class="staff" alt="Sofia som håller i en pungråtta">
+        
+        <b>Här på Klubb Pungråtta</b> finns allt du kan föreställa dig! Pungråttorna är såklart vårt fokus här på klubben; vi har alltid minst 6 pungråttor med olika intressen tillgängliga att välja mellan. Läs mer om dem <a href="#" onclick="changeContent('pungrattor.html')">här</a>. 
+        <br><br>
+        <b>Klubben startades 2019</b> av några engagerade pungråttefans som ville skapa en färgglad och rolig plats för barn på nätet. Nu har vi över 15 000 medlemmar, ett aktivt forum, ett brädspel, en prenumerationstjänst och världens roligaste jobb!
+    </div>
+    <br>
+    <div>
     <h2>Kontakta Oss</h2>
-    <p>Du kan nå oss via ✉ <a href="">info@klubbp.com</a>
-    <br>Observera att vi just nu upplever en mycket hög volym av mejl och att det kan ta upp till 14 dagar innan du får svar.
-    </p>
-    <h2>Vanliga Frågor</h2>
-    <ul>
+        Du kan nå oss via <a href="" id="emailP">✉ info@klubbp.com</a>
+        <br><br>
+        <p>Observera att vi just nu upplever en mycket hög volym av mejl och att det kan ta upp till 14 dagar innan du får svar.
+    </div>
+    <br>
+    <div>
+        <h2>Vanliga Frågor</h2>
         <b>Kan vem som helst bli medlem?</b>
-        <li>Du måste vara över 13 år för att bli medlem i Klubb Pungråtta.</li>
+        <p>Du måste vara över 13 år för att bli medlem i Klubb Pungråtta.</p><br>
         <b>När kommer det nya pungråttor?</b>
-        <li>Varje månad läggs två nya pungråttor till, och två byts ut. Det sker den första vardagen i varje månad.</li>
+        <p>Varje månad läggs två nya pungråttor till, och två byts ut. Det sker den första vardagen i varje månad.</p><br>
         <b>Kan jag få mina pengar tillbaka?</b>
-        <li>Alla köp på Klubb Pungråtta är slutgiltliga och kan inte återbetalas. 
-            Om du har frågor om ett specifikt köp ber vi dig att kontakta oss via mejl.</li>
-    </ul>
+        <p>Alla köp på Klubb Pungråtta är slutgiltliga och kan inte återbetalas. 
+            Om du har frågor om ett specifikt köp ber vi dig att kontakta oss via mejl.</p>
+    </div>
+    <button class="upp" onclick="scrollUp()" id="upp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-to-line-icon lucide-arrow-up-to-line"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>
+    </button>
 </body>
-
 </html>

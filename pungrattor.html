@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pungråttor</title>
@@ -23,7 +24,7 @@
                 <b>Favoritmat:</b> Frukt
                 <br>
                 <b>Favorithobby:</b> Klättra i träd
-                <br>
+                <br><br>
                 <div>
                     <a href="">Läs mer om Pungråttan Charlie ↘</a>
                 </div>
@@ -40,7 +41,7 @@
                 <b>Favoritmat:</b> Mask
                 <br>
                 <b>Favorithobby:</b> Smyga på fåglar
-                <br>
+                <br><br>
                 <div>
                     <a href="">Läs mer om Pungråttan Milo ↘</a>
                 </div>
@@ -57,7 +58,7 @@
                 <b>Favoritmat:</b> Jordgubbar
                 <br>
                 <b>Favorithobby:</b> Åka bil
-                <br>
+                <br><br>
                 <div>
                     <a href="">Läs mer om Pungråttan Ziggy ↘</a>
                 </div>
@@ -74,7 +75,7 @@
                 <b>Favoritmat:</b> Blåbär
                 <br>
                 <b>Favorithobby:</b> Utforska trädgårdar
-                <br>
+                <br><br>
                 <div>
                     <a href="">Läs mer om Pungråttan Bella ↘</a>
                 </div>
@@ -91,13 +92,16 @@
                 <b>Favoritmat:</b> Dig
                 <br>
                 <b>Favorithobby:</b> Bitas
-                <br>
+                <br><br>
                 <div>
                     <a href="">Läs mer om Pungråttan Toby ↘</a>
                 </div>
             </p>
         </div>
     </div>
+    <button class="upp" onclick="scrollUp()" id="upp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-to-line-icon lucide-arrow-up-to-line"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>
+    </button>
 </body>
 
 </html>

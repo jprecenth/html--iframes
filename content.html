@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content</title>
@@ -12,50 +13,90 @@
 </head>
 
 <body>
-    <h1>Välkommen till Klubb Pungråtta!</h1>
-    <p>Här på Klubb Pungråtta kan du hitta på allt möjligt: <a href="#" onclick="changeContent('login.html')">logga in</a> eller <a href="#" onclick="changeContent('createaccount.html')">skapa ett konto</a>
-        för att chatta med vänner, lär dig mer om pungråttor, kolla in alla nya <a href="#" onclick="changeContent('pungrattor.html')">coola bilder</a> och <a href="#" onclick="changeContent('about.html')">mycket mer</a>!
-    </p>
-    <br>
-    <h2>Nyheter</h2>
-    <div id="newsBox">
-        <h3>Nya profilbilder!</h3>
-        <p style="font-size: 14px;">Nu finns det fem nya profilbilder att välja mellan på ditt konto. Anpassa din för att visa just vem du är!
-        </p>
-        <p style="text-align: right; font-size: 13px;">
-            10 September, 2025
-            <br>
-            <a href="#" onclick="changeContent('login.html')">Läs mer...</a> 
-        </p>
-    </div>
-    <br>
-    <div id="newsBox">
-        <h3>Välkommna Pungråttan Charlie</h3>
-        <p style="font-size: 14px;">Vi har en ny pungråtta på besök här på Klubben! Han heter <a href="#" onclick="changeContent('pungrattor.html')">Charlie</a>. Hjälp oss att hälsa honom riktigt välkommen!
-        </p>
-        <p style="text-align: right; font-size: 13px;">
-            7 September, 2025
-            <br>
-            <a href="#" onclick="changeContent('pungrattor.html')">Läs mer...</a>
-        </p>
-    </div>
-    <br>
-    <div id="newsBox">
-        <h3>Läcka av personuppgifter</h3>
-        <p style="font-size: 14px;">Vi här på Klubb Pungråtta har några riktigt trista nyheter att dela med oss av: hela vår databas av personuppgifter har läckt ut på webben.
-            Det här inkluderar mejladresser, kreditkortsinformation, lösenord, personnummer m.m. Nu jobbar vi hårt för att...
-        </p>
-        <p style="text-align: right; font-size: 13px;">
-            25 Augusti, 2025
-            <br>
-            <a href="">Läs mer...</a>
-        </p>
-    </div>
-    <br>
-    <div style="text-align: center; text-decoration: underline;">
-        <a href="">Äldre nyheter...</a>
+    <div class="main-container">
+        <h1>Välkommen till Klubb Pungråtta!</h1>
+        <div class="top-container">
+            Här på Klubb Pungråtta kan du hitta på allt möjligt: <a href="#" onclick="changeContent('login.html')">logga in</a> eller <a href="#" onclick="changeContent('createaccount.html')">skapa ett konto</a> för att chatta med vänner, lär dig mer om pungråttor, kolla in alla nya <a href="#" onclick="changeContent('pungrattor.html')">coola bilder</a> och <a href="#" onclick="changeContent('about.html')">mycket mer</a>!
+        </div>
+        <br>
+        <div class="bottom-container">
+            <h2>Nyheter</h2>
+            <div id="newsBox">
+                <h3>Nya profilbilder!</h3>
+                <p>Nu finns det fem nya profilbilder att välja mellan på ditt konto. Anpassa din för att visa just vem du är!
+                </p>
+                <p>
+                    10 September, 2025
+                    <br>
+                    <a href="#" onclick="changeContent('login.html')">Läs mer...</a> 
+                </p>
+            </div>
+            <div id="newsBox">
+                <h3>Välkommna Pungråttan Charlie</h3>
+                <p>Vi har en ny pungråtta på besök här på Klubben! Han heter <a href="#" onclick="changeContent('pungrattor.html')">Charlie</a>. Hjälp oss att hälsa honom riktigt välkommen!
+                </p>
+                <p>
+                    7 September, 2025
+                    <br>
+                    <a href="#" onclick="changeContent('pungrattor.html')">Läs mer...</a>
+                </p>
+            </div>
+            <div id="newsBox">
+                <h3>Läcka av personuppgifter</h3>
+                <p>Vi här på Klubb Pungråtta har några riktigt trista nyheter att dela med oss av: hela vår databas av personuppgifter har läckt ut på webben.
+                    Det här inkluderar mejladresser, kreditkortsinformation, lösenord, personnummer m.m. Nu jobbar vi hårt för att...
+                </p>
+                <p>
+                    25 Augusti, 2025
+                    <br>
+                    <a href="">Läs mer...</a>
+                </p>
+            </div>
+            <div id="more-news-link" onclick="showMore()">
+                Äldre nyheter...
+            </div>
+            <div id="more-news">
+                <div id="newsBox">
+                    <h3>Midsommarhälsningar från Klubb P!</h3>
+                    <p>
+                        Glad midsommar från oss på Klubb Pungråtta! Vi hoppas alla har en underbar dag!
+                    </p>
+                    <p>
+                        21 juni, 2025
+                    </p>
+                </div>
+                <div id="newsBox">
+                    <h3>Tvättbjörns-takeover!</h3>
+                    <p>
+                        Har du kollat in den nya tema-knappen längst upp i högra hörnet? När man klickar på den händer något alldeless särskilt...
+                    </p>
+                    <p>
+                        2 juni, 2025
+                        <br>
+                        <a href="#" onclick="changeContent('pungrattor.html')">Läs mer...</a>
+                    </p>
+                </div>
+                <div id="newsBox">
+                    <h3>Sommarens Pungråttor</h3>
+                    <p>
+                        Är du redo för allt som komma skall? Här på Klubb Pungråtta händer det alltid något, och snart är det dags för sommarens nya vänner! Här kan du läsa allt om de kommande pungråttorna!
+                    </p>
+                    <p>
+                        3 maj, 2025
+                        <br>
+                        <a href="">Läs mer...</a>
+                    </p>
+                </div>
+                <div style="text-align: center; font-size: 12px;">
+                    Inga fler nyheter
+                </div>
+            </div>
+            <button class="upp" onclick="scrollUp()" id="upp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-to-line-icon lucide-arrow-up-to-line"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>
+            </button>
+        </div>
     </div>
 </body>
-
 </html>
-
+    
+    

@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> 
+    <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -26,9 +27,18 @@
           <br><br>
           <button type="submit">Logga in!</button>
         </form>
+          <div id="logoutSection" style="display:none;">
+            <p>
+              Du är redan inloggad som <b><span id="loggedInUserName"></span></b>!
+            </p> <br>
+            <p>
+              Gå till <a href="profile.html">din profil</a> eller <a href="" onclick="logOut()">Logga ut</a>.
+            </p>
+        </div>
       </div>
       <div id="loginRight">
         <p>Har du inget konto? <a href="#" onclick="changeContent('createaccount.html')">Skapa ett</a> idag!</p>
+        <br>
         <p>Vi på <b>Klubb Pungråtta</b> har följande krav för att Du ska kunna bli medlem:</p>
         <ol>
           <li>
@@ -38,7 +48,7 @@
             Att du (eller en målsman) har en giltig mejladress
           </li>
           <li>
-            Att du godkänner våra <a href="">Användarvillkor</a>
+            Att du godkänner våra <a href="#" onclick="changeContent('terms.html')">Användarvillkor</a>
           </li>
         </ol>
       </div>
