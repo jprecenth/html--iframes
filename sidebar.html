@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <script src="script.js"></script>
@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="main-page">
     <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar-nav">&#9776;</button>
-    <nav>
+    <nav id="sidebar-nav">
         <ul>
             <li>
                 <a href="#" onclick="changeContent('content.html')">Hem</a>
@@ -35,12 +35,11 @@
             <li id="loginButton" onclick="changeContent('login.html'); iconSpin()">
                 <button>
                     <img src="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png" width="50px" id="icon" class="icon">       
-                    <br>
                     Logga in!
                 </button>
             </li>
             <li>
-                Eller <a href="" class="createButton" onclick="changeContent('createaccount.html')">Skapa Konto</a>
+                <a href="" class="createButton" onclick="changeContent('createaccount.html')">Skapa Konto</a>
             </li>
             </div>
         </ul>

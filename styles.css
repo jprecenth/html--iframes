@@ -5,7 +5,20 @@
     scroll-behavior: smooth;
 }
 .menu-toggle { display: none; }
+/* MAIN-layouten gäller enbart på huvudsidan */
+.main-page main {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: clamp(1rem, 2vw, 2.5rem);
+    width: min(100%, 1200px);
+}
 
+/* Sidomenyn (iframe) får sina egna regler */
+.sidebar-page #sidebar-nav {
+    padding-top: 20px;
+    font-size: 25px;
+}
 body {
     margin-left: 30px;
     margin-right: 15px;
@@ -18,9 +31,9 @@ body {
 
 header {
     font-family: "Bagel Fat One", system-ui;
-    font-size: 45px;
+    font-size: clamp(2.4rem, 3vw, 4.5rem); /* minsta storlek 2.4rem (~38px), väx med 6% av viewportens bredd, maxa vid 4.5rem (~72px) */
     position: relative;
-    min-width: 900px;
+    min-width: min(35vw, 20rem);              /* låt rubriken krympa på små skärmar men behåll max ca 960px */
     text-shadow: 5px 5px #fbb80f;
 }
 
@@ -45,13 +58,16 @@ nav {
     #loginButton {
         text-align: center;
         button {
+            justify-self: center;
+            display: flex;
+            flex-direction: column;
             padding: 10px;
             font-size: 17px;
             transition-duration: .5s;
             box-shadow: 2px 2px 2px black;
             background-color: #fbb80f;
             &:hover {
-                background-color: #ffc42e;
+                background-color: #ffca44;
                 box-shadow: 3px 3px 4px black;
             }
         }
@@ -193,41 +209,55 @@ body.dark-theme {
 
 /* MAIN */
 main {
-    display: inline-flex;
-    width: 90%;
-    height: 500px;
+    display: flex;                                      /* lägg elementen på samma rad */
+    flex-wrap: nowrap;                                  /* hindra radbyte tills vi själva säger till i media query */
+    align-items: stretch;                               /* båda iframen blir lika höga */
+    gap: clamp(1rem, 2vw, 2.5rem);                      /* mer responsivt mellanrum */
+    width: min(100%, 1200px);                           /* håll layouten inom rimlig maxbredd */
+}
+
+main iframe {
+    flex: 1 1 auto;                                     /* låt flexreglerna styra bredden */
+    min-width: 0;                                       /* tillåt krympning trots overflow */
+    height: clamp(24rem, 68vh, 48rem);                  /* håll en gemensam höjd som följer viewporten */
+    border: 0;
+    border-radius: 30px;
 }
 
 #ramEtt {
-    max-width: 225px;
+    flex: 0 1 clamp(16rem, 10vw, 18rem);                /* sidomenyn håller sig inom spannet */
+    padding: 0 1rem 0 0;
     background-color: #c598af;
     box-shadow: 5px 5px #7e4aa4a3;
     border-top-left-radius: 30px;
-    padding-right: 15px;
 }
 
 #ramTvå {
+    flex: 1 1 clamp(30rem, 68vw, 60rem);                /* innehållet tar resten av bredden */
+    min-height: clamp(24rem, 68vh, 48rem);              /* samma höjdspann som #ramEtt för att undvika hopp */
     background-color: #fbb80f;
-    width: 70%;
     box-shadow: 5px 5px #7e4aa4a3;
     border-bottom-right-radius: 30px;
-    min-width: 600px;
 }
 
 footer {
+    display: flex;
     position: fixed;
+    align-items: center;
     bottom: 0;
     justify-content: center;
     background-color: #fbb80f;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
+    padding: 10px 20px 10px 20px;
     border-top-left-radius: 30px;
     box-shadow: 5px 5px #7e4aa4a3;
     text-align: center;
     font-size: 13px;
     a {
         padding: 5px;
+    }
+    p {
+        font-size: 10px;
+        margin-left: 10px;
     }
 }
 
@@ -245,6 +275,9 @@ footer {
     box-shadow: 5px 5px #d99f0d;
     transition-duration: .4s;
     font-size: 14px;
+    p {
+        margin-top: 5px;
+    }
     p:last-child {
         text-align: right;
         font-size: 13px;
@@ -335,23 +368,86 @@ button:hover {
     min-width: 500px;
     flex-wrap: wrap;
     transition-duration: .4s;
+    svg {
+        background-color: whitesmoke;
+        padding: 3px;
+        border: 2px solid black;
+        overflow: visible;
+        border-radius: 50%;
+    }
+    #cardText {
+        text-align: start;
+        word-wrap: break-word;
+    }
+    #iframeImg {
+        width: 200px;
+        height: auto;
+        box-shadow: 5px 5px #7e4aa4a3;
+        border-radius: 20px;    
+    }
 }
 
 #card:hover {
     background-color: #ffffff67; 
 }
 
-#iframeImg {
-    width: 200px;
-    height: auto;
-    box-shadow: 5px 5px #7e4aa4a3;
-    border-radius: 20px;    
+#card-popup {
+    visibility: hidden;
+    justify-self: center;
+    position: absolute;
+    max-width: 500px;
+    top: 120px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    svg {
+        fill: #c598af;
+        transition-duration: .5s;
+        transition-property: fill;
+    }
+    svg:hover {
+        cursor: pointer;
+        fill: whitesmoke;
+    }
+    .image-container {
+        position: relative;
+        svg {
+            position: absolute;
+            top: 10px;
+        }
+        #arrowLeft {
+            left: 10px;
+        }
+        #arrowRight {
+            left: 40px;
+        }
+        #image-popup {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            float: left;
+            margin-right: 20px;
+            box-shadow: 5px 5px #c598af;
+        }
+        .secondImg {
+            display: none;
+        }
+    }
+    p {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    #close-button {
+        right: 10px;
+        top: 10px;
+        position: absolute;
+    }
 }
 
-#cardText {
-    text-align: start;
-    word-wrap: break-word;
-}
+
 
 .upp {
     background-color: #fbb80f;
@@ -381,16 +477,35 @@ button:hover {
 }
 
 .profile-gallery {
+    display: inline-flex;
+    flex-wrap: wrap;
     img {
         width: 150px;
         height: 150px;
         object-fit: fill;
         border-radius: 20px;
+    }
+    .slot {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        border-radius: 20px;
         margin: 5px;
         box-shadow: 5px 5px #7e4aa4a3;
+        background-color: #ffe7aba5;
         transition-duration: .3s;
         &:hover {
             box-shadow: 5px 5px #fbb80f;
+        }
+        svg {
+            position: absolute;
+            right: 20%;
+            bottom: 20%;
+            stroke: #525252;
+            transition-duration: .3s;
+        }
+        svg:hover {
+            stroke: #000;
         }
     }
 }
@@ -437,30 +552,47 @@ button:hover {
             line-height: 25px;
         }
         div {
-            margin-bottom: 5px;
-            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            background-color: #ffe7aba5;
+            border-radius: 20px;
+            padding: 10px;
+            width: unset;
+        }
+        div:last-child {
+            width: fit-content;
         }
         li {
-            margin: 10px;
-            list-style-type: none;
-            
+            margin-bottom: 10px;
+            list-style-type: none; 
         }
     }
     .profile-middle-two {
         float: right;
         display: inline-flex;
+        text-align: center;
         margin-left: 15px;
         text-wrap: nowrap;
+        #profileStats {
+            div {
+                background-color: #ffe7aba5;
+                border-radius: 20px;
+                padding: 10px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            #avatar {
+                border-radius: 20px;
+                width: 100px;
+                border: 3px solid black;
+                padding: 3px;
+                margin: 5px;
+                background-color: white;
+            }
+        }
     }
 }    
-#avatar {
-    border-radius: 20px;
-    width: 100px;
-    box-shadow: 5px 5px #7e4aa4a3;
-    padding: 3px;
-    margin: 5px;
-    background-color: white;
-}
+
 #theme-toggle {
     color: #000;
     background-color: #f0f0f0;
@@ -497,6 +629,11 @@ body.dark-theme #theme-toggle {
     animation-duration: 2.5s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
+    background-color: #c598af;
+    padding: 10px;
+    border-radius: 50%;
+    overflow: visible;
+    border: black solid 2px;
 }
 
 @keyframes iconAnimation {
@@ -529,37 +666,76 @@ body.dark-theme #theme-toggle {
     padding-left: 10px;
 }
 
+.faq {
+    background-color: rgba(255, 250, 240, 0.551);
+    padding: 20px;
+    border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .main-page main {
+    flex-direction: column;        /* stapla iframen */
+    align-items: flex-start;
+  }
 
-/* Media */
-
-/* Mobile */
-body.mobile .menu-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    background: transparent;
-    border: 0;
-    font-size: 2rem;
-    cursor: pointer;
+  .main-page #ramEtt,
+  .main-page #ramTvå {
+    width: 100%;               /* gör att elementen fyller kolumnens bredd */
+    flex: none;
+  }
+}
+/* Mobilanpassning för sidomenyn (sidebar.html) */
+@media (max-width: 788px) {
+    .sidebar-page nav {
+        padding: 10px 0 0;
+        height: auto;                              /* låt navigationslistan växa efter innehåll */
+    }
+    
+    .sidebar-page nav ul {
+        display: flex;
+        flex-direction:column;
+        gap: 0.6rem;
+        align-items: flex-start;
+        flex-wrap: wrap;                           /* bryt länkarna på flera rader om det behövs */
+        justify-self: left;
+    }
+    
+    .sidebar-page nav li {
+        box-shadow: 2px 2px 2px black;
+        background-color: #fbb80f;
+        display: flex;
+        align-items: center;
+        margin: 4px;
+        font-size: 1.25rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 5px;
+        width: 100%;                        /* inga onödiga tomrum runt knapparna */
+        justify-content: flex-start;
+    }
+      .sidebar-page nav li a {
+    flex: 1;                      /* länken fyller hela knappen */
+    text-align: left;             /* vänstertext */
+  }
+    
+    .sidebar-page .loginSignup-div #loginButton {
+        box-shadow: none;
+        background-color: transparent;
+        display: flex;
+        align-items:center;
+        justify-self: left;
+        gap:0.5rem;
+    }
+    
+    .sidebar-page .loginSignup-div #loginButton img {
+        display: none;                             /* göm ikonen på liten skärm */
+    }
+    
+    .sidebar-page .loginSignup-div li:last-child {
+        display: none;                             /* göm “Skapa konto”-raden på mobil */
+    }
 }
 
-body.mobile #sidebar-nav {
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: clamp(220px, 70vw, 320px);
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    box-shadow: 6px 0 18px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    z-index: 1000;
-}
 
-body.mobile #sidebar-nav.is-open {
-    transform: translateX(0);
-}
 
-body.menu-open {
-    overflow: hidden;
-}
+
+
+

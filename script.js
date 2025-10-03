@@ -20,13 +20,13 @@ function changeContent(page) {
 
 // Alert om man inte är inloggad
 function loginFirst() {
-
-    if (!window.parent.loggedInName){
-        alert("Du måste logga in för att komma åt denna sida!");
-    }
-    else {
-        changeContent('forum.html');
-    }
+  
+  if (!window.parent.loggedInName){
+    alert("Du måste logga in för att komma åt denna sida!");
+  }
+  else {
+    changeContent('forum.html');
+  }
 }
 
 // Konto skapat
@@ -40,20 +40,20 @@ function accountCreated() {
 function signIn() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-
+  
   localStorage.setItem("loggedInUser", username);
   window.parent.loggedInName = username;
-
+  
   console.log("Inloggad som: " + username);
-
+  
   // Visa profil-länken i sidebar
   const sidebarDoc = window.parent.document.getElementById("ramEtt").contentDocument;
   const profileLink = sidebarDoc.getElementById("profileLink");
   const loginSignupDiv = sidebarDoc.querySelector(".loginSignup-div");
-
+  
   if (profileLink) profileLink.style.display = "inline";
   if (loginSignupDiv) loginSignupDiv.style.display = "none";
-
+  
   // Ladda profilen i ramTvå
   window.parent.document.getElementById("ramTvå").src = "profile.html";
 }
@@ -63,14 +63,14 @@ function logOut() {
   localStorage.removeItem('loggedInUser');
   window.parent.loggedInName = null;
   console.log("Utloggad");
-
+  
   const sidebarDoc = window.parent.document.getElementById("ramEtt").contentDocument;
   const profileLink = sidebarDoc.getElementById("profileLink");
   const loginSignupDiv = sidebarDoc.querySelector(".loginSignup-div");
-
+  
   if (profileLink) profileLink.style.display = "none";
   if (loginSignupDiv) loginSignupDiv.style.display = "block";
-
+  
   // Gå till login
   window.parent.document.getElementById("ramTvå").src = "login.html";
 }
@@ -80,7 +80,7 @@ function onProfileLoad() {
   var username = window.parent.loggedInName;
   document.querySelectorAll(".usernamePlaceholder").forEach((element) => {
     element.textContent = username;  
-
+    
     console.log("Profil laddad för: " + username);
   })
 }
@@ -90,14 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutSection = document.getElementById("logoutSection");
   const loggedInNameSpan = document.getElementById("loggedInUserName");
   const loginRight = document.getElementById("loginRight");
-
+  
   if (loginForm) {
     const loggedInUser = localStorage.getItem("loggedInUser");
-
+    
     if (loggedInUser) {
       // Dölj loginformuläret
       loginForm.style.display = "none";
-
+      
       // Visa logout-sektionen med användarnamnet
       if (logoutSection) {
         logoutSection.style.display = "block";
@@ -124,9 +124,9 @@ function iconSpin() {
 }
 
 // Scroll till toppen
- function scrollUp() {
-          document.documentElement.scrollTop = 0;
-    }
+function scrollUp() {
+  document.documentElement.scrollTop = 0;
+}
 
 // Only show upp-knapp längre ned
 function scrollFunction() {
@@ -140,10 +140,55 @@ function scrollFunction() {
 
 window.onscroll = scrollFunction;
 
-  // Show more - Äldre Nyheter
-    function showMore() {
-      let moreNewsContainer = document.getElementById("more-news");
-      let moreNewsLink = document.getElementById("more-news-link");
-      moreNewsContainer.style.display = "inline";
-      moreNewsLink.style.display = "none"
-    }
+// Show more - Äldre Nyheter
+function showMore() {
+  let moreNewsContainer = document.getElementById("more-news");
+  let moreNewsLink = document.getElementById("more-news-link");
+  moreNewsContainer.style.display = "inline";
+  moreNewsLink.style.display = "none"
+}
+
+// Card-popup på Pungråttor.html
+function expandCard() {
+  let cardPopup = document.getElementById("card-popup");
+  cardPopup.style.visibility = "visible";
+}
+
+function closeCard() {
+  let cardPopup = document.getElementById("card-popup");
+  cardPopup.style.visibility = "hidden";
+}
+
+function showRight() {
+  let secondImage = document.querySelector(".secondImg");
+  let firstImage = document.querySelector(".firstImg");
+  secondImage.style.display = "inline";
+  firstImage.style.display = "none";
+}
+
+function showLeft() {
+  let secondImage = document.querySelector(".secondImg");
+  let firstImage = document.querySelector(".firstImg");
+  secondImage.style.display = "none";
+  firstImage.style.display = "inline";
+}
+
+
+// Synka sidomenyns iframe-höjd med innehållets faktiska höjd (+15px marginal)
+function syncSidebarHeight() {
+  const sidebarFrame = document.getElementById('ramEtt');
+  if (!sidebarFrame) return; // inget iframe hittat
+  
+  const sidebarDoc = sidebarFrame.contentDocument || sidebarFrame.contentWindow.document;
+  if (!sidebarDoc) return; // innehållet är inte redo än
+  
+  const sidebarBody = sidebarDoc.body;
+  const requiredHeight = sidebarBody.scrollHeight + 15; // +15px extra utrymme nedåt
+  sidebarFrame.style.height = `${requiredHeight}px`;
+}
+
+// Kör så fort sidomenyn laddats och uppdatera även när fönstret ändrar storlek
+document.getElementById('ramEtt').addEventListener('load', () => {
+  syncSidebarHeight();
+  window.addEventListener('resize', syncSidebarHeight);
+});

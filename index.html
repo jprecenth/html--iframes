@@ -1,42 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <script src="script.js" defer></script> 
     <!-- defer gör så script.js laddas parallelt med html:en -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Klubb Pungråtta</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/x-icon" href="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
-        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
-    </head>
-    
-    <body class="light-theme">
-        <button id="theme-toggle" type="button" title="Byt färgschema">
-            Tema
-            <svg id="toggleOff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-toggle-right-icon lucide-toggle-right"><circle cx="15" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg><svg id="toggleOn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-toggle-left-icon lucide-toggle-left"><circle cx="9" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg>
-        </button>
-        <header>
-            <a href="index.html"><h1>Klubb Pungråtta</h1></a>
-            <img src="/disco.gif" class="disco">
-            <p class="racoon">Tvättbjörn</p>
-        </header>
-        <main>
-            <iframe src="sidebar.html" frameborder="0" id="ramEtt" class=sidebar-frame></iframe>
-            
-            <iframe src="content.html" frameborder="0" id="ramTvå"></iframe>
-        </main>
-        <footer>
+    <title>Klubb Pungråtta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+</head>
+
+<body class="light-theme main-page">
+    <button id="theme-toggle" type="button" title="Byt färgschema">
+        Tema
+        <svg id="toggleOff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-toggle-right-icon lucide-toggle-right"><circle cx="15" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg><svg id="toggleOn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-toggle-left-icon lucide-toggle-left"><circle cx="9" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg>
+    </button>
+    <header>
+        <a href="index.html"><h1>Klubb Pungråtta</h1></a>
+        <img src="/disco.gif" class="disco">
+        <p class="racoon">Tvättbjörn</p>
+    </header>
+    <main>
+        <iframe src="sidebar.html" frameborder="0" id="ramEtt" class=sidebar-frame></iframe>
+        
+        <iframe src="content.html" frameborder="0" id="ramTvå"></iframe>
+    </main>
+    <footer>
+        <div>
             <a href="#" onclick="changeContent('about.html')">Om oss</a>
+        </div>
+        <div>
             <a href="#" onclick="changeContent('about.html')">Kontakt</a>
-            <a href="#" onclick="changeContent('terms.html')">Användarvillkor</a>
+        </div>
+        <!-- <a href="#" onclick="changeContent('terms.html')">Användarvillkor</a> -->
+        <div class="button-container">
+            <a type="terms" class="btn" onclick="openPopup()">Användarvillkor</a>
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+                <img src="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png" alt="opossom icon">
+                <h1>Användarvillkor</h1>
+                <h3>1. Användning av sidan</h3>
+                <ul>
+                    <li>Du får läsa, titta på bilderna och lära dig om pungråttor.</li>
+                    <li>Allt innehåll får endast användas <b>personligt bruk</b>.</li>
+                    <li>Du får inte kopiera eller sälja vårt material.</li>
+                    <li>Inte störa de små söta djuren i  verkliga livet</li>
+                </ul>
+                <h3>2. Ansvarsfriskrivning</h3>
+                <ul>
+                    <li>Vi tar inget ansvar om du blir <b>förälskad i en pungråtta</b> eller börjar kalla ditt husdjur efter våra pungråttor.</li>
+                    <li>Informationen är korrekt så gott vi kan, men vi kan inte garantera att du lär dig allt om pungråttor.</li>
+                </ul>
+                <h3>3. Godkännande</h3>
+                <p>Genom att klicka i rutorna lovar du att:</p>
+                <!-- Checkbox -->
+                <br>
+                <input type="checkbox" id="rule1"> Följa reglerna ovan<br>
+                <input type="checkbox" id="rule2"> Ha kul och respektera pungråttor<br>
+                <input type="checkbox" id="rule3"> Inte försöka hoppa som en pungråtta (du kan försöka hemma, på eget ansvar)<br>
+                <br>
+                
+                <button id="submit" onclick="closePopup()">Skicka</button>
+                
+                <script>
+                    let popup = document.getElementById("popup");
+                    let overlay = document.getElementById("overlay");
+                    const rule1 = document.getElementById("rule1");
+                    const rule2 = document.getElementById("rule2");
+                    const rule3 = document.getElementById("rule3");
+                    const submitBtn = document.getElementById("submit");
+                    
+                    function openPopup() {
+                        popup.classList.add("open-popup");
+                        overlay.classList.add("show");
+                    }
+                    
+                    function closePopup() {
+                        if (rule1.checked && rule2.checked && rule3.checked) {
+                            popup.classList.remove("open-popup");
+                            overlay.classList.remove("show");
+                        } else {
+                            alert("Du måste godkänna alla punkter innan du kan stänga popupen!");
+                        }
+                    }
+                    
+                    function checkAll() {
+                        submitBtn.disabled = !(rule1.checked && rule2.checked && rule3.checked);
+                    }
+                    
+                    rule1.addEventListener("change", checkAll);
+                    rule2.addEventListener("change", checkAll);
+                    rule3.addEventListener("change", checkAll);
+                </script>
+                <style>
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+                    .button-container {
+                        /* width: 100%; */
+                        /* height: 100vh; */
+                        /* display: flex; */
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                    }
+                    .popup {
+                        width: 400px;
+                        background: #fff;
+                        border: #fbb80f 4px solid;
+                        border-radius: 22px;
+                        position: fixed;        
+                        top: 50%;              
+                        left: 50%;
+                        transform: translate(-50%, -50%) scale(0.1);
+                        text-align: center;
+                        padding: 0 30px 30px;
+                        color: black;
+                        visibility: hidden;
+                        transition: transform 0.4s, top 0.4s;
+                    }
+                    .popup img {
+                        width: 100px;
+                        margin-top: -50px;
+                        /* border-radius: 50%; */
+                        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+                    }
+                    .open-popup {
+                        visibility: visible;
+                        top: 50%;
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                    .popup h2 {
+                        font-size: 38px;
+                        font-weight: 500;
+                        margin: 30px 0 10px;
+                    }
+                    .popup button {
+                        width: 100%;
+                        margin-top: 50px;
+                        padding: 10px 0;
+                        background: #c598af;
+                        color: black;
+                        border: 0;
+                        outline: none;
+                        font-size: 18px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+                    }
+                    ul {
+                        list-style: disc;
+                        padding: 20px;
+                    }
+                    
+                    li {
+                        text-transform: none;
+                    }
+                    .overlay {
+                        position: fixed;
+                        inset: 0; /* top, right, bottom, left = 0 */
+                        background: rgba(0,0,0,0.5);
+                        visibility: hidden;
+                    }
+                    
+                    .overlay.show {
+                        visibility: visible;
+                    }
+                </style>
+            </div>
+        </div>
+        <div>
             <p>Klubb Pungråtta © 2025</p>
-        </footer>
-        <img src="dance.gif" class="danceOne">
-        <img src="dance.gif" class="danceTwo">
-    </body>
+        </div>
+    </footer>
+    <img src="dance.gif" class="danceOne">
+    <img src="dance.gif" class="danceTwo">
     
-    </html>
+</body>
+
+</html>
