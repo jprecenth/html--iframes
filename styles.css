@@ -37,6 +37,16 @@ header {
     text-shadow: 5px 5px #fbb80f;
 }
 
+.topOpossum {
+    width: 70px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transform: rotateY(180deg);
+    display: none;
+    z-index: -1;
+    
+}
 a {
     text-decoration: none;
     color: black;
@@ -231,7 +241,8 @@ main iframe {
     box-shadow: 5px 5px #7e4aa4a3;
     border-top-left-radius: 30px;
     height: auto;
-    min-height: unset;
+    min-height: 30vh;
+    min-width: 210px;
 }
 
 #ramTvå {
@@ -240,6 +251,7 @@ main iframe {
     background-color: #fbb80f;
     box-shadow: 5px 5px #7e4aa4a3;
     border-bottom-right-radius: 30px;
+    min-width: 620px;
 }
 
 footer {
@@ -381,7 +393,8 @@ button:hover {
     }
     #iframeImg {
         width: 200px;
-        height: auto;
+        height: 200px;
+        object-fit: cover;
         box-shadow: 5px 5px #7e4aa4a3;
         border-radius: 20px;    
     }
@@ -681,23 +694,23 @@ body.dark-theme #theme-toggle {
 .button-container {
     align-items: center;
     justify-content: center;
-    .popup {
-        width: 400px;
-        background: #fff;
+    .popup { 
+        width: 50vw;
+        background-color: #fff; 
         border: #fbb80f 4px solid;
-        border-radius: 22px;
-        position: fixed;        
-        top: 50%;              
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.1);
-        text-align: center;
-        padding: 0 30px 30px;
-        color: black;
-        visibility: hidden;
+        border-radius: 22px; 
+        position: fixed; 
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%) scale(0.1); 
+        text-align: center; 
+        padding: 0 30px 30px; 
+        color: black; 
+        visibility: hidden; 
         transition: transform 0.4s, top 0.4s;
     }
     .popup img {
-        width: 100px;
+        width: 100px; 
         margin-top: -50px;
     }
     .open-popup {
@@ -747,15 +760,14 @@ body.dark-theme #theme-toggle {
 /* Media */
 @media (max-device-width: 771px) {
     html {
-        overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-x: hidden;    
     }
     
     body.light-theme {
         background-image: none;
-        overflow: hidden;
         margin: 0px 5px 0px 15px;
         padding: 5px;
+        overflow: hidden;
     }
     .main-page main {
         flex-direction: column;        /* stapla iframen */
@@ -769,13 +781,20 @@ body.dark-theme #theme-toggle {
         min-height: unset;
     }
     
+    .topOpossum {
+        display: unset;
+    }
     #ramEtt {
         max-height: fit-content;
+        min-height: 100%;
     }
+    
     #ramTvå {
-        min-height: unset;
-        height: 50vh;
+        min-height: 65vh;
+        height: 65vh;
         max-height: unset;
+        min-width: unset;
+        
     }
     
     #theme-toggle {
@@ -792,7 +811,6 @@ body.dark-theme #theme-toggle {
     }
     
     #sidebar-nav {
-        height: fit-content;                              /* låt navigationslistan växa efter innehåll */
         padding: unset;
         padding-top: 15px;
         width: 100%;
@@ -813,7 +831,7 @@ body.dark-theme #theme-toggle {
         background-color: #fbb80f;
         display: flex;
         align-items: center;
-        font-size: 1.25rem;
+        font-size: 1rem;
         padding: 0.1rem 0.2rem;
         border-radius: 5px;
         width: fit-content;
@@ -832,7 +850,7 @@ body.dark-theme #theme-toggle {
             font-family: "Bagel Fat One", system-ui;
             text-transform: uppercase;
             border: none;
-            font-size: 1.25rem;
+            font-size: 1rem;
             padding: 0.1rem 0.2rem;
             margin: 0;
             width: 100%;
@@ -870,21 +888,45 @@ body.dark-theme #theme-toggle {
         .profile-middle-one, .profile-middle-two {
             width: 90%;
             margin-left: 0;
+            justify-content: center;
         }
+        .profile-middle-one {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    .profile-gallery {
+        justify-content: space-evenly;
     }
     
     #card {
         flex-direction: column;
         min-width: 90%;
+        #iframeImg {
+            width: 75vw; 
+            height: 60vh;
+        }
     }
+    
     #card-popup {
-        width: 200px;
+        width: 80%;
+        #image-popup {
+            max-width: 75vw;
+            margin-bottom: 20px;
+        }
     }
-
+    
     .staff {
         float: none;
         display: block;
         margin-bottom: 10px;
+    }
+    
+    .popup {
+        min-width: 80vw;
+        max-height: 90vh;
     }
     
     footer {
