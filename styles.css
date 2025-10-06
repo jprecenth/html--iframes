@@ -106,7 +106,7 @@ h1 {
 }
 
 ul {
-    list-style-type: none;;
+    list-style-type: none;
 }
 
 li {
@@ -132,11 +132,11 @@ li {
 
 /* THEME */
 body.light-theme {
-    background-image: url(Opossum.png);
-    background-size: auto 350px; 
+    background-image: url(Opossum2.png);
+    background-size: auto 150px; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
-    background-position: bottom right;
+    background-position: bottom 20px right 20px;
     transition-duration: 1s;
     h1 {
         color: #000;
@@ -252,6 +252,7 @@ main iframe {
     box-shadow: 5px 5px #7e4aa4a3;
     border-bottom-right-radius: 30px;
     min-width: 620px;
+    max-width: 1000px;
 }
 
 footer {
@@ -277,7 +278,7 @@ footer {
 
 
 /* Content */
-#newsBox {
+.newsBox {
     background-color: #ffffff45;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -298,7 +299,7 @@ footer {
     }
 }
 
-#newsBox:hover {
+.newsBox:hover {
     background-color: #ffffff67;   
 }
 
@@ -366,6 +367,17 @@ button {
 button:hover {
     box-shadow: 3px 3px #7e4aa4a3;
     cursor: pointer;
+}
+
+.termsPage {
+    ul {
+        list-style: disc;
+        padding: 20px;
+    }
+    
+    li {
+        text-transform: none;
+    }
 }
 
 /* Pungråttor */
@@ -436,7 +448,7 @@ button:hover {
         #arrowRight {
             left: 40px;
         }
-        #image-popup {
+        .image-popup {
             width: 300px;
             height: 300px;
             object-fit: cover;
@@ -536,6 +548,7 @@ button:hover {
             border-radius: 20px;
             padding: 20px;
             width: unset;
+            max-width: 80%;
         }
         div:last-child {
             width: fit-content;
@@ -543,7 +556,7 @@ button:hover {
         li {
             margin-top: 10px;
             text-indent: 10px;
-            list-style-type: none; 
+            list-style-type:none; 
         }
     }
     .profile-middle-two {
@@ -621,7 +634,8 @@ button:hover {
     display: flex;
     align-items: center;
     box-shadow: 2px 2px 2px black;
-    transition-duration: .3s;
+    transition: all .3s;
+    transition: background-color 0.0s;
     svg {
         margin-left: 2px;
     }
@@ -711,7 +725,7 @@ body.dark-theme #theme-toggle {
     }
     .popup img {
         width: 100px; 
-        margin-top: -50px;
+        margin-top: -10px;
     }
     .open-popup {
         visibility: visible;
@@ -725,7 +739,7 @@ body.dark-theme #theme-toggle {
     }
     .popup button {
         width: 100%;
-        margin-top: 50px;
+        margin-top: 10px;
         padding: 10px 0;
         background: #c598af;
         color: black;
@@ -889,6 +903,7 @@ body.dark-theme #theme-toggle {
             width: 90%;
             margin-left: 0;
             justify-content: center;
+            text-align: center;
         }
         .profile-middle-one {
             display: flex;
@@ -896,23 +911,27 @@ body.dark-theme #theme-toggle {
             align-items: center;
         }
     }
-    
-    .profile-gallery {
-        justify-content: space-evenly;
+    .profile-bottom {
+        justify-content: center;
+        text-align: center;
+        .profile-gallery {
+            justify-content: space-evenly;
+        }
     }
     
     #card {
         flex-direction: column;
         min-width: 90%;
         #iframeImg {
-            width: 75vw; 
+            width: 70vw;
+            object-fit: cover; 
             height: 60vh;
         }
     }
     
     #card-popup {
         width: 80%;
-        #image-popup {
+        .image-popup {
             max-width: 75vw;
             margin-bottom: 20px;
         }
@@ -920,13 +939,27 @@ body.dark-theme #theme-toggle {
     
     .staff {
         float: none;
+        justify-self: center;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     
     .popup {
         min-width: 80vw;
         max-height: 90vh;
+        img {
+            max-width: 50px;
+            margin-top: 110px;
+            
+        }
+        h3, h1 {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            margin: 0;
+            padding: 0;
+        }
     }
     
     footer {

@@ -18,8 +18,8 @@
         <div class="image-container">
             <svg id="arrowLeft" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left-icon lucide-circle-arrow-left" onclick="showLeft()"><circle cx="12" cy="12" r="10"/><path d="m12 8-4 4 4 4"/><path d="M16 12H8"/></svg>
             <svg id="arrowRight" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right" onclick="showRight()"><circle cx="12" cy="12" r="10"/><path d="m12 16 4-4-4-4"/><path d="M8 12h8"/></svg>
-            <img id="image-popup" class="firstImg" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Opossum_2.jpg" alt="Pungråttan Charlie: en rejäl pungråtta som sitter på en gren med snö i bakgrunden.">
-            <img id="image-popup" class="secondImg" src="https://naturalsciences.org/calendar/wp-content/uploads/2020/08/Virginia-Opossum-NC-Wildlife-Resources-Commission.jpg" alt="Pungråttan Charlie: En pungråtta på en gren som tittar in i kameran med ett halvt leende.">
+            <img class="firstImg image-popup" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Opossum_2.jpg" alt="Pungråttan Charlie: en rejäl pungråtta som sitter på en gren med snö i bakgrunden.">
+            <img class="secondImg image-popup" src="https://naturalsciences.org/calendar/wp-content/uploads/2020/08/Virginia-Opossum-NC-Wildlife-Resources-Commission.jpg" alt="Pungråttan Charlie: En pungråtta på en gren som tittar in i kameran med ett halvt leende.">
         </div>
         <svg id="close-button" onclick="closeCard()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x-icon lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
         <h2>Charlie</h2>
@@ -31,93 +31,83 @@
         </p>
     </div>
     <div id="card">
-        <a href="javascript:;" onclick="expandCard()"> <img id="iframeImg" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Opossum_2.jpg" alt="Pungråttan Charlie: en rejäl pungråtta som sitter på en gren med snö i bakgrunden.">
-            <div id="cardText">
-                <a href="javascript:;" onclick="expandCard()"><h2>Charlie</h2></a>
-                <p>
-                    <b>Född:</b> 2020
-                    <br>
-                    <b>Favoritmat:</b> Frukt
-                    <br>
-                    <b>Favorithobby:</b> Klättra i träd
-                    <br><br>
-                    <div>
-                        <a href="javascript:;" onclick="expandCard()">Läs mer om Pungråttan Charlie <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
-                    </div>
-                </p>
+        <img id="iframeImg" onclick="expandCard()" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Opossum_2.jpg" alt="Pungråttan Charlie: en rejäl pungråtta som sitter på en gren med snö i bakgrunden.">
+        <div id="cardText">
+            <a href="javascript:;" onclick="expandCard()"><h2>Charlie</h2></a>
+            <b>Född:</b> 2020
+            <br>
+            <b>Favoritmat:</b> Frukt
+            <br>
+            <b>Favorithobby:</b> Klättra i träd
+            <br><br>
+            <div>
+                <a href="javascript:;" onclick="expandCard()">Läs mer om Pungråttan Charlie <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
             </div>
         </div>
-        <div id="card">
-            <a href=""><img id="iframeImg" src="https://i.redd.it/i121ctyrkg3e1.jpeg" alt="Pungråttan Milo: ansiktet av en pungråtta som ler stort med munnen öppen och tungan lite på snedden."></a>
-            <div id="cardText">
-                <a href=""><h2>Milo</h2></a>
-                <p>
-                    <b>Född:</b> 2019
-                    <br>
-                    <b>Favoritmat:</b> Mask
-                    <br>
-                    <b>Favorithobby:</b> Smyga på fåglar
-                    <br><br>
-                    <div>
-                        <a href="">Läs mer om Pungråttan Milo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
-                    </div>
-                </p>
+    </div>
+    <div id="card">
+        <a href=""><img id="iframeImg" src="https://i.redd.it/i121ctyrkg3e1.jpeg" alt="Pungråttan Milo: ansiktet av en pungråtta som ler stort med munnen öppen och tungan lite på snedden."></a>
+        <div id="cardText">
+            <a href=""><h2>Milo</h2></a>
+            <b>Född:</b> 2019
+            <br>
+            <b>Favoritmat:</b> Mask
+            <br>
+            <b>Favorithobby:</b> Smyga på fåglar
+            <br><br>
+            <div>
+                <a href="">Läs mer om Pungråttan Milo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
             </div>
         </div>
-        <div id="card">
-            <a href=""><img id="iframeImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTybQZNUU9R-pVq_wFpk5ieFhV93yCzrByIJA&s" alt="Pungråttan Ziggy: en pungråtta med tungan ut och tom blick med en tass på en ratt i ett fordon."></a>
-            <div id="cardText">
-                <a href=""><h2>Ziggy</h2></a>
-                <p>
-                    <b>Född:</b> 2020
-                    <br>
-                    <b>Favoritmat:</b> Jordgubbar
-                    <br>
-                    <b>Favorithobby:</b> Åka bil
-                    <br><br>
-                    <div>
-                        <a href="">Läs mer om Pungråttan Ziggy <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
-                    </div>
-                </p>
+    </div>
+    <div id="card">
+        <a href=""><img id="iframeImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTybQZNUU9R-pVq_wFpk5ieFhV93yCzrByIJA&s" alt="Pungråttan Ziggy: en pungråtta med tungan ut och tom blick med en tass på en ratt i ett fordon."></a>
+        <div id="cardText">
+            <a href=""><h2>Ziggy</h2></a>
+            <b>Född:</b> 2020
+            <br>
+            <b>Favoritmat:</b> Jordgubbar
+            <br>
+            <b>Favorithobby:</b> Åka bil
+            <br><br>
+            <div>
+                <a href="">Läs mer om Pungråttan Ziggy <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
             </div>
         </div>
-        <div id="card">
-            <a href=""><img id="iframeImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTpzqIu4KyKJe52u9u1m2YVnbkt6wX0kzyGivx1FHzHNlGAAx7FKhIFVUifuikTvV1s9g&usqp=CAU" alt="Pungråttan Bella: en liten pungråtte-unge som sitter på en filt utomhus, hon ler försiktigt mot kameran."></a>
-            <div id="cardText">
-                <a href=""><h2>Bella</h2></a>
-                <p>
-                    <b>Född:</b> 2025
-                    <br>
-                    <b>Favoritmat:</b> Blåbär
-                    <br>
-                    <b>Favorithobby:</b> Utforska trädgårdar
-                    <br><br>
-                    <div>
-                        <a href="">Läs mer om Pungråttan Bella <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
-                    </div>
-                </p>
+    </div>
+    <div id="card">
+        <a href=""><img id="iframeImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTpzqIu4KyKJe52u9u1m2YVnbkt6wX0kzyGivx1FHzHNlGAAx7FKhIFVUifuikTvV1s9g&usqp=CAU" alt="Pungråttan Bella: en liten pungråtte-unge som sitter på en filt utomhus, hon ler försiktigt mot kameran."></a>
+        <div id="cardText">
+            <a href=""><h2>Bella</h2></a>
+            <b>Född:</b> 2025
+            <br>
+            <b>Favoritmat:</b> Blåbär
+            <br>
+            <b>Favorithobby:</b> Utforska trädgårdar
+            <br><br>
+            <div>
+                <a href="">Läs mer om Pungråttan Bella <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
             </div>
         </div>
-        <div id="card">
-            <a href=""><img id="iframeImg" src="https://media.istockphoto.com/id/996289092/photo/the-virginia-opossum-didelphis-virginiana-on-white.jpg?s=612x612&w=0&k=20&c=phkJqsrIfKvMlPoQfDni6LuDfXN5ugYLbs6frKG_7Gs=" alt="Pungråttan Toby: en pungråtta sedd framifrån med munnen öppen på ett hotfullt sätt."></a>
-            <div id="cardText">
-                <a href=""><h2>Toby</h2></a>
-                <p>
-                    <b>Född:</b> 2020
-                    <br>
-                    <b>Favoritmat:</b> Dig
-                    <br>
-                    <b>Favorithobby:</b> Bitas
-                    <br><br>
-                    <div>
-                        <a href="">Läs mer om Pungråttan Toby <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
-                    </div>
-                </p>
+    </div>
+    <div id="card">
+        <a href=""><img id="iframeImg" src="https://media.istockphoto.com/id/996289092/photo/the-virginia-opossum-didelphis-virginiana-on-white.jpg?s=612x612&w=0&k=20&c=phkJqsrIfKvMlPoQfDni6LuDfXN5ugYLbs6frKG_7Gs=" alt="Pungråttan Toby: en pungråtta sedd framifrån med munnen öppen på ett hotfullt sätt."></a>
+        <div id="cardText">
+            <a href=""><h2>Toby</h2></a>
+            <b>Född:</b> 2020
+            <br>
+            <b>Favoritmat:</b> Dig
+            <br>
+            <b>Favorithobby:</b> Bitas
+            <br><br>
+            <div>
+                <a href="">Läs mer om Pungråttan Toby <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
             </div>
         </div>
-        <button class="upp" onclick="scrollUp()" id="upp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-to-line-icon lucide-arrow-up-to-line"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>
-        </button>
-    </body>
-    
-    </html>
+    </div>
+    <button class="upp" onclick="scrollUp()" id="upp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-to-line-icon lucide-arrow-up-to-line"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>
+    </button>
+</body>
+
+</html>

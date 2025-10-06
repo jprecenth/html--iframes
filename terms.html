@@ -5,61 +5,50 @@
     <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Klubb Pungråtta</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <h1>Användarvillkor</h1>
-    <h3>1. Användning av sidan</h3>
-    <ul>
-        <li>Du får läsa, titta på bilderna och lära dig om pungråttor.</li>
-        <li>Allt innehåll får endast användas <b>personligt bruk</b>.</li>
-        <li>Du får inte kopiera eller sälja vårt material.</li>
-        <li>Inte störa de små söta djuren i  verkliga livet</li>
-    </ul>
-    <h3>2. Ansvarsfriskrivning</h3>
-    <ul>
-        <li>Vi tar inget ansvar om du blir <b>förälskad i en pungråtta</b> eller börjar kalla ditt husdjur efter våra pungråttor.</li>
-        <li>Informationen är korrekt så gott vi kan, men vi kan inte garantera att du lär dig allt om pungråttor.</li>
-    </ul>
-    <h3>3. Godkännande</h3>
-    <p>Genom att klicka i rutorna lovar du att:</p>
-    <!-- Checkbox -->
-     <br>
-     <input type="checkbox" id="rule1"> Följa reglerna ovan<br>
-     <input type="checkbox" id="rule2"> Ha kul och respektera ppungråttor<br>
-     <input type="checkbox" id="rule3"> Inte försöka hoppa som en pungråtta (du kan försöka hemma, på eget ansvar)<br>
-     <br>
-     
-     <button id="submit" disabled>Skicka</button>
-
-     <style>
-        ul {
-            list-style: disc;
-            padding: 20px;
-        }
-
-        li {
-            text-transform: none;
-        }
-     </style>
-
-     <script>
-        const rule1 = document.getElementById("rule1");
-        const rule2 = document.getElementById("rule2");
-        const rule3 = document.getElementById ("rule3");
-        const submitBtn = document.getElementById("submit");
-
-        function checkAll() {
-            submitBtn.disabled = !(rule1.checked && rule2.checked && rule3.checked);
-        }
-
-        rule1.addEventListener("change", checkAll);
-        rule2.addEventListener("change", checkAll);
-        rule3.addEventListener("change", checkAll);
-     </script>
-</html>
+        <title>Klubb Pungråtta</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="https://64.media.tumblr.com/1eb87d31f82a9cd5cdae7c9b4291be5d/2db165f20e63fda6-bb/s400x600/b8d691dfd9467d47b45424242cffd291f6c19720.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display">
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    </head>
+    
+    
+    <body class="termsPage">
+        <h1>Användarvillkor</h1>
+        <h3>1. Användning av sidan</h3>
+        <ul>
+            <li>Du får läsa, titta på bilderna och lära dig om pungråttor.</li>
+            <li>Allt innehåll får endast användas <b>personligt bruk</b>.</li>
+            <li>Du får inte kopiera eller sälja vårt material.</li>
+            <li>Inte störa de små söta djuren i  verkliga livet</li>
+        </ul>
+        <h3>2. Ansvarsfriskrivning</h3>
+        <ul>
+            <li>Vi tar inget ansvar om du blir <b>förälskad i en pungråtta</b> eller börjar kalla ditt husdjur efter våra pungråttor.</li>
+            <li>Informationen är korrekt så gott vi kan, men vi kan inte garantera att du lär dig allt om pungråttor.</li>
+        </ul>
+        <h3>3. Godkännande</h3>
+        <p>Genom att klicka i rutorna lovar du att:</p>
+        <!-- Checkbox -->
+        <br>
+        <input type="checkbox" id="rule1"> Följa reglerna ovan<br>
+        <input type="checkbox" id="rule2"> Ha kul och respektera ppungråttor<br>
+        <input type="checkbox" id="rule3"> Inte försöka hoppa som en pungråtta (du kan försöka hemma, på eget ansvar)<br>
+        <br>
+        
+        <button id="submit" disabled>Skicka</button>
+        <script>
+            const rule1 = document.getElementById("rule1");
+            const rule2 = document.getElementById("rule2");
+            const rule3 = document.getElementById ("rule3");
+            const submitBtn = document.getElementById("submit");
+            
+            function checkAll() {
+                submitBtn.disabled = !(rule1.checked && rule2.checked && rule3.checked);
+            }
+            
+            rule1.addEventListener("change", checkAll);
+            rule2.addEventListener("change", checkAll);
+            rule3.addEventListener("change", checkAll);
+        </script>
+        </html>

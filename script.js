@@ -195,30 +195,33 @@ document.getElementById('ramEtt').addEventListener('load', () => {
 
 // Terms popup
 let popup = document.getElementById("popup");
-                    let overlay = document.getElementById("overlay");
-                    const rule1 = document.getElementById("rule1");
-                    const rule2 = document.getElementById("rule2");
-                    const rule3 = document.getElementById("rule3");
-                    const submitBtn = document.getElementById("submit");
-                    
-                    function openPopup() {
-                        popup.classList.add("open-popup");
-                        overlay.classList.add("show");
-                    }
-                    
-                    function closePopup() {
-                        if (rule1.checked && rule2.checked && rule3.checked) {
-                            popup.classList.remove("open-popup");
-                            overlay.classList.remove("show");
-                        } else {
-                            alert("Du måste godkänna alla punkter innan du kan använda sidan!");
-                        }
-                    }
-                    
-                    function checkAll() {
-                        submitBtn.disabled = !(rule1.checked && rule2.checked && rule3.checked);
-                    }
-                    
-                    rule1.addEventListener("change", checkAll);
-                    rule2.addEventListener("change", checkAll);
-                    rule3.addEventListener("change", checkAll);
+let overlay = document.getElementById("overlay");
+const rule1 = document.getElementById("rule1");
+const rule2 = document.getElementById("rule2");
+const rule3 = document.getElementById("rule3");
+const submitBtn = document.getElementById("submit");
+const toggleBtn = document.getElementById("theme-toggle");
+
+function openPopup() {
+  popup.classList.add("open-popup");
+  overlay.classList.add("show");
+  toggleBtn.style.opacity = "0";
+}
+
+function closePopup() {
+  if (rule1.checked && rule2.checked && rule3.checked) {
+    popup.classList.remove("open-popup");
+    overlay.classList.remove("show");
+    toggleBtn.style.opacity = "1";
+  } else {
+    alert("Du måste godkänna alla punkter innan du kan använda sidan!");
+  }
+}
+
+function checkAll() {
+  submitBtn.disabled = !(rule1.checked && rule2.checked && rule3.checked);
+}
+
+rule1.addEventListener("change", checkAll);
+rule2.addEventListener("change", checkAll);
+rule3.addEventListener("change", checkAll);
