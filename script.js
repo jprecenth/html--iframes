@@ -192,3 +192,33 @@ document.getElementById('ramEtt').addEventListener('load', () => {
   syncSidebarHeight();
   window.addEventListener('resize', syncSidebarHeight);
 });
+
+// Terms popup
+let popup = document.getElementById("popup");
+                    let overlay = document.getElementById("overlay");
+                    const rule1 = document.getElementById("rule1");
+                    const rule2 = document.getElementById("rule2");
+                    const rule3 = document.getElementById("rule3");
+                    const submitBtn = document.getElementById("submit");
+                    
+                    function openPopup() {
+                        popup.classList.add("open-popup");
+                        overlay.classList.add("show");
+                    }
+                    
+                    function closePopup() {
+                        if (rule1.checked && rule2.checked && rule3.checked) {
+                            popup.classList.remove("open-popup");
+                            overlay.classList.remove("show");
+                        } else {
+                            alert("Du måste godkänna alla punkter innan du kan använda sidan!");
+                        }
+                    }
+                    
+                    function checkAll() {
+                        submitBtn.disabled = !(rule1.checked && rule2.checked && rule3.checked);
+                    }
+                    
+                    rule1.addEventListener("change", checkAll);
+                    rule2.addEventListener("change", checkAll);
+                    rule3.addEventListener("change", checkAll);

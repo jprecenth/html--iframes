@@ -11,7 +11,7 @@
     flex-wrap: nowrap;
     align-items: flex-start;
     gap: clamp(1rem, 2vw, 2.5rem);
-    width: min(100%, 1200px);
+    width: 90%;
 }
 
 /* Sidomenyn (iframe) får sina egna regler */
@@ -20,11 +20,11 @@
     font-size: 25px;
 }
 body {
-    margin-left: 30px;
-    margin-right: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 10px;
     font-family: "DynaPuff", system ui;
-    max-width: 1300px;
+    max-width: 100%;
     /* text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.597); */
     
 }
@@ -226,10 +226,12 @@ main iframe {
 
 #ramEtt {
     flex: 0 1 clamp(16rem, 10vw, 18rem);                /* sidomenyn håller sig inom spannet */
-    padding: 0 1rem 0 0;
+    padding: 0 0 0 0;
     background-color: #c598af;
     box-shadow: 5px 5px #7e4aa4a3;
     border-top-left-radius: 30px;
+    height: auto;
+    min-height: unset;
 }
 
 #ramTvå {
@@ -303,7 +305,6 @@ footer {
 #more-news {
     display: none;
     transition-duration: 5s;
-    
 }
 
 /* Login */
@@ -315,8 +316,7 @@ footer {
 #loginLeft {
     float: left;
     width: auto;
-    padding-right: 20px;
-    
+    padding-right: 20px;   
 }
 
 #loginRight {
@@ -447,8 +447,6 @@ button:hover {
     }
 }
 
-
-
 .upp {
     background-color: #fbb80f;
     position: sticky;
@@ -474,40 +472,6 @@ button:hover {
     box-shadow: 5px 5px #7e4aa4a3;
     padding: 10px 10px 20px 20px;
     margin-bottom: 15px;
-}
-
-.profile-gallery {
-    display: inline-flex;
-    flex-wrap: wrap;
-    img {
-        width: 150px;
-        height: 150px;
-        object-fit: fill;
-        border-radius: 20px;
-    }
-    .slot {
-        width: 150px;
-        height: 150px;
-        position: relative;
-        border-radius: 20px;
-        margin: 5px;
-        box-shadow: 5px 5px #7e4aa4a3;
-        background-color: #ffe7aba5;
-        transition-duration: .3s;
-        &:hover {
-            box-shadow: 5px 5px #fbb80f;
-        }
-        svg {
-            position: absolute;
-            right: 20%;
-            bottom: 20%;
-            stroke: #525252;
-            transition-duration: .3s;
-        }
-        svg:hover {
-            stroke: #000;
-        }
-    }
 }
 
 .profile-container {
@@ -554,16 +518,18 @@ button:hover {
         div {
             margin-bottom: 10px;
             margin-top: 10px;
-            background-color: #ffe7aba5;
+            background-color: whitesmoke;
+            box-shadow: 3px 3px rgba(0, 0, 0, 0.187);
             border-radius: 20px;
-            padding: 10px;
+            padding: 20px;
             width: unset;
         }
         div:last-child {
             width: fit-content;
         }
         li {
-            margin-bottom: 10px;
+            margin-top: 10px;
+            text-indent: 10px;
             list-style-type: none; 
         }
     }
@@ -575,23 +541,62 @@ button:hover {
         text-wrap: nowrap;
         #profileStats {
             div {
-                background-color: #ffe7aba5;
+                background-color:whitesmoke;
                 border-radius: 20px;
                 padding: 10px;
                 margin-bottom: 10px;
                 margin-top: 10px;
+                box-shadow: 3px 3px rgba(0, 0, 0, 0.187);
             }
             #avatar {
-                border-radius: 20px;
-                width: 100px;
+                border-radius: 50%;
+                overflow: visible;
+                width: 70px;
                 border: 3px solid black;
-                padding: 3px;
+                padding: 13px;
                 margin: 5px;
-                background-color: white;
+                background-color: #fbb80f; 
+                box-shadow: 3px 3px rgba(0, 0, 0, 0.187);
             }
         }
     }
-}    
+}
+
+.profile-gallery {
+    display: inline-flex;
+    flex-wrap: wrap;
+    img {
+        width: 150px;
+        height: 150px;
+        object-fit: fill;
+        border-radius: 20px;
+    }
+    .slot {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        border-radius: 20px;
+        margin: 5px;
+        box-shadow: 5px 5px #7e4aa4a3;
+        background-color: #fbb80f;
+        transition-duration: .3s;
+        &:hover {
+            box-shadow: 5px 5px rgba(58, 34, 75, 0.733);
+        }
+        svg {
+            position: absolute;
+            right: 20%;
+            bottom: 20%;
+            stroke: #525252;
+            transition-duration: .3s;
+        }
+        svg:hover {
+            stroke: #000;
+        }
+    }
+}
+
+/* Theme */
 
 #theme-toggle {
     color: #000;
@@ -671,71 +676,228 @@ body.dark-theme #theme-toggle {
     padding: 20px;
     border-radius: 20px;
 }
-@media (max-width: 768px) {
-  .main-page main {
-    flex-direction: column;        /* stapla iframen */
-    align-items: flex-start;
-  }
 
-  .main-page #ramEtt,
-  .main-page #ramTvå {
-    width: 100%;               /* gör att elementen fyller kolumnens bredd */
-    flex: none;
-  }
-}
-/* Mobilanpassning för sidomenyn (sidebar.html) */
-@media (max-width: 788px) {
-    .sidebar-page nav {
-        padding: 10px 0 0;
-        height: auto;                              /* låt navigationslistan växa efter innehåll */
+/* Terms */
+.button-container {
+    align-items: center;
+    justify-content: center;
+    .popup {
+        width: 400px;
+        background: #fff;
+        border: #fbb80f 4px solid;
+        border-radius: 22px;
+        position: fixed;        
+        top: 50%;              
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        text-align: center;
+        padding: 0 30px 30px;
+        color: black;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+    }
+    .popup img {
+        width: 100px;
+        margin-top: -50px;
+    }
+    .open-popup {
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .popup h2 {
+        font-size: 38px;
+        font-weight: 500;
+        margin: 30px 0 10px;
+    }
+    .popup button {
+        width: 100%;
+        margin-top: 50px;
+        padding: 10px 0;
+        background: #c598af;
+        color: black;
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+    ul {
+        list-style: disc;
+        padding: 20px;
     }
     
-    .sidebar-page nav ul {
+    li {
+        text-transform: none;
+    }
+    .overlay {
+        position: fixed;
+        inset: 0; /* top, right, bottom, left = 0 */
+        background: rgba(0,0,0,0.5);
+        visibility: hidden;
+    }
+    
+    .overlay.show {
+        visibility: visible;
+    }
+}
+
+/* Media */
+@media (max-device-width: 771px) {
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    
+    body.light-theme {
+        background-image: none;
+        overflow: hidden;
+        margin: 0px 5px 0px 15px;
+        padding: 5px;
+    }
+    .main-page main {
+        flex-direction: column;        /* stapla iframen */
+        align-items: flex-start;
+    }
+    
+    .main-page #ramEtt,
+    .main-page #ramTvå {
+        width: 100%;               /* gör att elementen fyller kolumnens bredd */
+        flex: none;
+        min-height: unset;
+    }
+    
+    #ramEtt {
+        max-height: fit-content;
+    }
+    #ramTvå {
+        min-height: unset;
+        height: 50vh;
+        max-height: unset;
+    }
+    
+    #theme-toggle {
+        display: none;
+    }
+    
+    header {
+        font-size: 20px;
+        padding: 0px;
+        h1 {
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+    
+    #sidebar-nav {
+        height: fit-content;                              /* låt navigationslistan växa efter innehåll */
+        padding: unset;
+        padding-top: 15px;
+        width: 100%;
+        margin: unset;
+    }
+    
+    #sidebar-nav ul {
         display: flex;
-        flex-direction:column;
-        gap: 0.6rem;
+        flex-direction: row;
+        gap: 0.2rem;
         align-items: flex-start;
         flex-wrap: wrap;                           /* bryt länkarna på flera rader om det behövs */
         justify-self: left;
     }
     
-    .sidebar-page nav li {
+    #sidebar-nav li {
         box-shadow: 2px 2px 2px black;
         background-color: #fbb80f;
         display: flex;
         align-items: center;
-        margin: 4px;
         font-size: 1.25rem;
-        padding: 0.2rem 0.4rem;
+        padding: 0.1rem 0.2rem;
         border-radius: 5px;
-        width: 100%;                        /* inga onödiga tomrum runt knapparna */
+        width: fit-content;
         justify-content: flex-start;
+        margin: 2px;
     }
-      .sidebar-page nav li a {
-    flex: 1;                      /* länken fyller hela knappen */
-    text-align: left;             /* vänstertext */
-  }
     
-    .sidebar-page .loginSignup-div #loginButton {
+    #sidebar-nav .loginSignup-div #loginButton {
         box-shadow: none;
-        background-color: transparent;
+        background-color: unset;
         display: flex;
-        align-items:center;
-        justify-self: left;
-        gap:0.5rem;
+        align-items: center;
+        background-color: blue;
+        padding: 0;
+        button {
+            font-family: "Bagel Fat One", system-ui;
+            text-transform: uppercase;
+            border: none;
+            font-size: 1.25rem;
+            padding: 0.1rem 0.2rem;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
     
-    .sidebar-page .loginSignup-div #loginButton img {
+    #sidebar-nav .loginSignup-div #loginButton img {
         display: none;                             /* göm ikonen på liten skärm */
     }
     
-    .sidebar-page .loginSignup-div li:last-child {
+    #sidebar-nav .loginSignup-div li:last-child {
         display: none;                             /* göm “Skapa konto”-raden på mobil */
     }
+    
+    #loginMain {
+        flex-direction: column;
+        #loginRight {
+            margin-top: 10px;
+        }
+    }
+    
+    .profile-top {
+        flex-direction: column;
+        h1 {
+            margin-bottom: 0;
+        }
+        .profile-links {
+            padding-top: 0;
+        }
+    }
+    
+    .profile-middle {
+        flex-direction: column;
+        .profile-middle-one, .profile-middle-two {
+            width: 90%;
+            margin-left: 0;
+        }
+    }
+    
+    #card {
+        flex-direction: column;
+        min-width: 90%;
+    }
+    #card-popup {
+        width: 200px;
+    }
+
+    .staff {
+        float: none;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    footer {
+        display: inline-flex;
+        position: fixed;
+        flex-wrap: wrap;
+        box-shadow: none;
+        border-top-right-radius: 20px;
+        width: 80%;
+        padding: 5px;
+        margin: 0;
+    }
 }
-
-
-
 
 
 
