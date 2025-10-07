@@ -8,11 +8,6 @@ if (toggle) {
   });
 }
 
-// MOBILE
-
-
-
-
 // Byta innehåll i iframe
 function changeContent(page) {
   parent.document.querySelector('iframe:nth-child(2)').src = page;
